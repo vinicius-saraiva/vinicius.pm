@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicius.pm - Coming Soon</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0c0c0c;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, World! </h1>
+        <p>Great things coming up soon.</p>
+        <p>Stay tuned...</p>
+        <p class="blink">&lt;/&gt;</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const text = "Welcome to vinicius.pm";
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    document.querySelector('h1').innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+        });
+    </script>
+</body>
+</html>
