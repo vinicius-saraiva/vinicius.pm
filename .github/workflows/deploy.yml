@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       - name: Install Zola
         uses: taiki-e/install-action@v2
