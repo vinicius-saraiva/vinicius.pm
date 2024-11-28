@@ -3,7 +3,7 @@ title = "Home"
 template = "index.html"
 +++
 
-### Vinicius Saraiva Andrade
+### Vinicius Saraiva
 
 Business-oriented Product Manager with a deep technical curiosity and understanding, bridging the gap between business strategy and technology implementation.
 
@@ -20,7 +20,7 @@ Business-oriented Product Manager with a deep technical curiosity and understand
 
 #### Education
 - BSc. in International Economics and Finance  
-cBocconi University - Milan, Italy _(2019 - 2022)_  
+  Bocconi University - Milan, Italy _(2019 - 2022)_  
   Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis) 
   
 <br>
@@ -32,4 +32,4 @@ cBocconi University - Milan, Italy _(2019 - 2022)_
 
 <br>
 
-For more, visit my ["LinkedIn"](https://www.linkedin.com/in/viniciusandrade/)
+For more, visit my ["LinkedIn"](https://www.linkedin.com/in/vinicius-saraiva/)

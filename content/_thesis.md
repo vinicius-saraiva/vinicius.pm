@@ -20,7 +20,7 @@ template = "page.html"
         color: white;
         text-decoration: none;
         border-radius: 4px; text-align: left;">
-        📄 Download Thesis PDF
+        📄 Download PDF
     </a>
 </div>
 
