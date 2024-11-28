@@ -12,7 +12,7 @@ Business-oriented Product Manager with a deep technical curiosity and understand
 <br>
 
 #### Current role: Product Manager at iBanFirst
-- Paris, France _(09/2022 - Present)_
+- Paris, France (09/2022 - Present)
 - B2B cross-border payment platform
 - Leading client experience in web platform and mobile app
 
