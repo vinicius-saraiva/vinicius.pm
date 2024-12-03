@@ -5,7 +5,7 @@ template = "index.html"
 
 ### Vinicius Saraiva
 
-Business-oriented Product Manager with a deep technical curiosity and understanding, bridging the gap between business strategy and technology implementation.
+Business-oriented Product Manager who's very curious about tech, bridging the gap between business strategy and technology implementation.
 
 👷‍♂️ News: building [drex.guide](https://drex.guide) on my free time
 

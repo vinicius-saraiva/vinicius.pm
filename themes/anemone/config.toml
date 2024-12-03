@@ -33,7 +33,7 @@ internal_level = "warn"
 author = "Speyll"
 display_author = true
 
-favicon = "favicon.ico"
+favicon = "/favicon.png"
 image = ""
 
 default_theme = "light"
