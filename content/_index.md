@@ -5,7 +5,7 @@ template = "index.html"
 
 ### Vinicius Saraiva
 
-Business-oriented Product Manager who's very curious about tech, bridging the gap between business strategy and technology implementation.
+Curious and tech-savvy Product Manager, passionate about turning ideas into solutions at the intersection of business and technology.
 
 👷‍♂️ News: building [drex.guide](https://drex.guide) on my free time
 
@@ -15,6 +15,7 @@ Business-oriented Product Manager who's very curious about tech, bridging the ga
 - Paris, France (09/2022 - Present)
 - B2B cross-border payment platform
 - Leading client experience in web platform and mobile app
+- Project topics: UX/UI, Open Finance, Authentication, FX
 
 <br>
 
