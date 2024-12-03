@@ -53,7 +53,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ini
 
 // Initialize PostHog with your project API key
 posthog.init('phc_CzCsR8kLTf58Wbn9QMIGvHzlXMfZJJHocnHoPwwTrac', {
-    api_host: 'https://eu.i.posthog.com'  // Use your self-hosted URL if not using cloud
+    api_host: 'https://eu.i.posthog.com'  // Note: Using EU endpoint
 });
 
 // Track page views
