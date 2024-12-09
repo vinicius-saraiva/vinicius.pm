@@ -11,7 +11,7 @@ Tech + Business + Finance
 
 <br>
 
-### Current role: Product Manager at iBanFirst
+### Product Manager at iBanFirst
 - Paris, France (09/2022 - Present)
 - B2B cross-border payment platform
 - Leading client experience in web platform and mobile app
@@ -20,7 +20,7 @@ Tech + Business + Finance
 <br>
 
 ### Education
-- Internships: Stone (Project: Open Banking), Startupbootcamp, Accenture
+- Internships: Stone (Project: Open Banking API), Startupbootcamp, Accenture
 - BSc. in International Economics and Finance  
   Bocconi University - Milan, Italy _(2019 - 2022)_  
   Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis) 
