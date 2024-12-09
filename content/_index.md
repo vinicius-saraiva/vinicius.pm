@@ -5,7 +5,7 @@ template = "index.html"
 
 ### Vinicius Saraiva
 
-Curious and tech-savvy Product Manager, passionate about turning ideas into solutions at the intersection of business and technology.
+Tech + Business + Finance
 
 👷‍♂️ News: building [drex.guide](https://drex.guide) on my free time
 
@@ -33,4 +33,4 @@ Curious and tech-savvy Product Manager, passionate about turning ideas into solu
 
 <br>
 
-For more, visit my ["LinkedIn"](https://www.linkedin.com/in/vinicius-saraiva/)
+For more, visit my [LinkedIn](https://www.linkedin.com/in/vinicius-saraiva/)
