@@ -6,8 +6,10 @@ template = "page.html"
 I have spoken in public for the past 5+ years, both in academic and professional environment.
 
 - Languages: Portuguese, French, Italian, and English
-- 200+ people audience
+- 50-200+ people audience
 - In-person and virtual presentations
+
+<br>
 
 ### Gallery
 
@@ -24,9 +26,12 @@ I have spoken in public for the past 5+ years, both in academic and professional
 <div class="media-grid">
 <!-- Images -->
     <div class="media-item">
-        <img src="/images/speaking1.jpg" alt="Speaking at Conference" loading="lazy">
+        <img src="/images/photo1.jpg" alt="Speaking at Conference" loading="lazy">
     </div>
     <div class="media-item">
-        <img src="/images/speaking2.jpg" alt="Workshop Presentation" loading="lazy">
+        <img src="/images/photo2.jpg" alt="Workshop Presentation" loading="lazy">
+    </div>
+     <div class="media-item">
+        <img src="/images/photo3.jpg" alt="Workshop Presentation" loading="lazy">
     </div>
 </div>
