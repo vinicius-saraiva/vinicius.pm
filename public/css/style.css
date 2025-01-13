@@ -103,3 +103,28 @@
 .webring {
   margin: .375rem;
 }
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.media-item {
+  transition: transform 0.2s;
+}
+
+.media-item:hover {
+  transform: translateY(-5px);
+}
+
+.media-item img, 
+.media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-fit: cover;
+  border: none !important;  /* Override theme's border */
+  outline: none !important; /* Override any outline */
+}
