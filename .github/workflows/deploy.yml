@@ -21,8 +21,10 @@ jobs:
         with:
           tool: zola@0.17.2
 
-      - name: Build
-        run: zola build
+      - name: Build site
+        run: |
+          rm -rf public
+          zola build --force
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
