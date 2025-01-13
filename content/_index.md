@@ -3,7 +3,7 @@ title = "Home"
 template = "index.html"
 +++
 
-### Vinicius Saraiva
+### Vinicius Andrade
 
 Tech + Business + Finance
 
@@ -22,9 +22,18 @@ Tech + Business + Finance
   - Stone (Project: Open Banking API)
   - Startupbootcamp
   - Accenture
+
+<br>
+
 - BSc. in International Economics and Finance  
-  Bocconi University - Milan, Italy _(2019 - 2022)_  
-  Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis)
+  Bocconi University - Milan - Italy _(2019 - 2022)_
+  - Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis)
+
+<br>
+
+- B.A. in Economics at Dartmouth College - Hanover, NH - USA _(2018 - 2019)_
+  - Dartmouth Entrepreneurial Network
+  - TuckLAB Startup Ideation Program finalist
 
 <br>
 

@@ -7,7 +7,7 @@ I have spoken in public for the past 5+ years, both in academic and professional
 
 - 50-200+ people audience
 - In-person and virtual presentations
-- Workshops / Hands-on interactive sessions
+- Keynotes / Workshops / Hands-on interactive sessions
 - Languages: Portuguese, French, Italian, and English
 
 <br>
