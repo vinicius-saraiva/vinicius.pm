@@ -3,14 +3,16 @@ title = "Home"
 template = "index.html"
 +++
 
-### Vinicius Andrade
-
+## Vinicius Andrade
 Tech + Business + Finance
+
+🌎 Paris, France | Rio de Janeiro, Brazil
+
 
 <br>
 
 ### Product Manager at iBanFirst
-- Paris, France (09/2022 - Present)
+- Paris, France (Sept. 2022 - Present)
 - B2B cross-border payment platform
 - Leading client experience in web platform and mobile app
 - Project topics: UX/UI, Open Finance, Authentication, FX
@@ -20,8 +22,8 @@ Tech + Business + Finance
 ### Education
 - Internships:
   - Stone (Project: Open Banking API)
-  - Startupbootcamp
-  - Accenture
+  - Startupbootcamp Accelerator
+  - Accenture (Innovation Lab)
 
 <br>
 
