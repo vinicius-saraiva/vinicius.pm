@@ -19,4 +19,5 @@ highlight_code = true
 # Customize your header navigation
 header_nav = [
     { url = "/", name_en = "/home/" },
+    { url = "/speaking", name_en = "/public speaking/" }
 ]

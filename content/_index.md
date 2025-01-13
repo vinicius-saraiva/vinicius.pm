@@ -7,8 +7,6 @@ template = "index.html"
 
 Tech + Business + Finance
 
-👷‍♂️ News: building [drex.guide](https://drex.guide) on my free time
-
 <br>
 
 ### Product Manager at iBanFirst
