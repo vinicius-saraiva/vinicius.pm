@@ -1,5 +1,6 @@
 +++
-title = "Projects" template = "page.html"
+title = "Projects"
+template = "page.html"
 +++
 
 ## Projects
