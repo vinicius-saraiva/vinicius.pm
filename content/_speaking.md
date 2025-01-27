@@ -1,5 +1,5 @@
 +++
-title = "Speaking experience"
+title = "Talks"
 template = "page.html"
 +++
 

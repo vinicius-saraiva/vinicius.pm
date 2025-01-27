@@ -1,4 +1,6 @@
-+++ title = "Projects" template = "page.html" +++
++++
+title = "Projects" template = "page.html"
++++
 
 - Bulk Payment Processor (iBanFirst API)
 - AI-AutoTranslator (OpenAI API)
