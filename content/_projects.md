@@ -9,15 +9,19 @@ template = "page.html"
 
 Play game here: [Flappy Chouette](https://flappychouette.fun/)
 
-##### Talk: How coding Flappy Chouette made me a better PM: 4 lessons for Product Managers
+<b>Talk: How coding Flappy Chouette made me a better PM - 4 lessons for Product Managers</b>
 
-<div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
-    <iframe 
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-        src="https://www.youtube.com/embed/L4YNFWIb3ec?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
-        frameborder="0" 
-        allowfullscreen>
-    </iframe>
+<div class="media-grid">
+    <div class="media-item" style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; justify-content: center;">
+        <div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
+            <iframe 
+                style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100%; height: 100%;" 
+                src="https://www.youtube.com/embed/L4YNFWIb3ec?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
 </div>
 
 <br/>
@@ -44,7 +48,7 @@ Built with the [iBanFirst API](https://docs.ibanfirst.com/), this project allows
 Tool that allows Localization Managers to translate their Localise.biz (Loco) projects using OpenAI API. Prompt is adapted to business context, platform (web, mobile) and language specificities. Users can also add a glossary file with their own terms.
 
 - AI Tools Used: Cursor, Claude-3.5-Sonnet
-- APIs: OpenAI API, Localise.biz API
+- APIs: [OpenAI API](https://platform.openai.com/docs/api-reference/introduction), [Localise.biz API](https://localise.biz/api)
 - Languages: Javascript, HTML, CSS
 
 <br/>
@@ -68,7 +72,7 @@ Tool that allows Localization Managers to translate their Localise.biz (Loco) pr
 
 /* Video container takes full width */
 .media-grid:first-of-type {
-    grid-template-columns: 1fr;
+    display: block !important;
 }
 
 /* Images are in a 2-column grid */
