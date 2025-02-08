@@ -17,7 +17,9 @@ Built with the [iBanFirst API](https://docs.ibanfirst.com/), this project allows
 
 - AI Tools Used: Cursor, Claude-3.5-Sonnet
 - Languages: Python, Javascript, HTML, CSS
+
 <br/>
+
 <div class="media-grid">
     <div class="media-item">
         <img src="/images/bulkpay.png" alt="Bulk Payment Processor" loading="lazy">
@@ -33,7 +35,9 @@ Tool that allows Localization Managers to translate their Localise.biz (Loco) pr
 - AI Tools Used: Cursor, Claude-3.5-Sonnet
 - APIs: OpenAI API, Localise.biz API
 - Languages: Javascript, HTML, CSS
+
 <br/>
+
 <div class="media-grid">
     <div class="media-item">
         <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy">
