@@ -4,7 +4,7 @@ template = "index.html"
 +++
 
 ## Vinicius Andrade
-Tech + Business + Finance
+PM who likes to code.
 
 🌎 Paris, France | Rio de Janeiro, Brazil
 
