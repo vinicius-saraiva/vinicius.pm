@@ -7,7 +7,9 @@ template = "page.html"
 
 ### Flappy Chouette
 
-Play here: [Flappy Chouette](https://flappychouette.fun/)
+Play game here: [Flappy Chouette](https://flappychouette.fun/)
+
+##### Talk: How coding Flappy Chouette made me a better PM: 4 lessons for Product Managers
 
 <div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
     <iframe 
