@@ -36,7 +36,7 @@ Tool that allows Localization Managers to translate their Localise.biz (Loco) pr
 <br/>
 <div class="media-grid">
     <div class="media-item">
-        <img src="/images/autotranslator.png" alt="AutoTranslator" width="500">
+        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy">
     </div>
 </div>
 
