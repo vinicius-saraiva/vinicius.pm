@@ -7,7 +7,16 @@ template = "page.html"
 
 ### Flappy Chouette
 
-<div style="padding:42.19% 0 0 0;position:relative; background-color: transparent;"><iframe src="https://player.vimeo.com/video/679153225?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Epic Series Loop (21-9).mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+Play here: [Flappy Chouette](https://flappychouette.fun/)
+
+<div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
+    <iframe 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+        src="https://www.youtube.com/embed/Ttl8Gg-P-Ao?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div>
 
 <br/>
 <br/>
@@ -22,7 +31,7 @@ Built with the [iBanFirst API](https://docs.ibanfirst.com/), this project allows
 
 <div class="media-grid">
     <div class="media-item">
-        <img src="/images/bulkpay.png" alt="Bulk Payment Processor" loading="lazy">
+        <img src="/images/bulkpay.png" alt="Bulk Payment Processor" loading="lazy" width="100%">
     </div>
 </div>
 
@@ -40,7 +49,7 @@ Tool that allows Localization Managers to translate their Localise.biz (Loco) pr
 
 <div class="media-grid">
     <div class="media-item">
-        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy">
+        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy" width="100%">
     </div>
 </div>
 

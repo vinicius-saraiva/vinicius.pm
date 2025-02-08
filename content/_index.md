@@ -8,14 +8,14 @@ PM who likes to code.
 
 🌎 Paris, France | Rio de Janeiro, Brazil
 
-<br>
-
-<a href="https://www.linkedin.com/in/vinicius-saraiva/" class="linkedin-button">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
-  Connect
+<a href="https://www.linkedin.com/in/vinicius-saraiva/" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <img src="/images/linkedin.png" alt="LinkedIn" width="20" height="20" style="margin-right: 5px; border: none; border-radius: 1px;">
+  <span>Connect with me on LinkedIn</span>
 </a>
 
 <br>
+<br>
+
 
 ### Product Manager at iBanFirst
 - Paris, France (Sept. 2022 - Present)
