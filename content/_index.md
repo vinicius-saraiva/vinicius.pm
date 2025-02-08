@@ -8,6 +8,12 @@ PM who likes to code.
 
 🌎 Paris, France | Rio de Janeiro, Brazil
 
+<br>
+
+<a href="https://www.linkedin.com/in/vinicius-saraiva/" class="linkedin-button">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" style="vertical-align: middle; margin-right: 5px;">
+  Connect
+</a>
 
 <br>
 
@@ -43,7 +49,3 @@ PM who likes to code.
 - SCRUM Professional Scrum Product Owner (PSPO I)
 - SAFe® 6.0 Product Manager/Product Owner
 - AI Product Management Specialization (Duke University)
-
-<br>
-
-For more, visit my [LinkedIn](https://www.linkedin.com/in/vinicius-saraiva/)
