@@ -33,7 +33,7 @@ PM who likes to code.
 
 ### Product Manager at iBanFirst
 - Paris, France (Sept. 2022 - Present)
-- B2B cross-border payment platform
+- [B2B cross-border payment platform](https://www.ibanfirst.com/)
 - Leading client experience in web platform and mobile app
 - Project topics: UX/UI, Open Finance, Authentication, FX
 
@@ -41,9 +41,9 @@ PM who likes to code.
 
 ### Education
 - Internships:
-  - Stone (Project: Open Banking API)
-  - Startupbootcamp Accelerator
-  - Accenture (Innovation Lab)
+  - [Stone Co.](https://investors.stone.co/) (Project: [Open Banking API](https://docs.openbank.stone.com.br/))
+  - [Startupbootcamp Accelerator](https://www.startupbootcamp.org/)
+  - [Accenture](https://www.accenture.com/us-en/services/about/accenture-customer-innovation-network-milan) (Innovation Lab)
 
 <br>
 
@@ -54,12 +54,12 @@ PM who likes to code.
 <br>
 
 - B.A. in Economics at Dartmouth College - Hanover, NH - USA _(2018 - 2019)_
-  - Dartmouth Entrepreneurial Network
-  - TuckLAB Startup Ideation Program finalist
+  - [Dartmouth Entrepreneurial Network](https://magnuson.dartmouth.edu/experiential-learning-2/)
+  - [TuckLAB](https://magnuson.dartmouth.edu/tucklab-3/) Startup Ideation Program finalist
 
 <br>
 
 ### Certifications
-- SCRUM Professional Scrum Product Owner (PSPO I)
-- SAFe® 6.0 Product Manager/Product Owner
-- AI Product Management Specialization (Duke University)
+- [SCRUM Professional Scrum Product Owner](https://www.credly.com/badges/19100cdc-f29a-4272-ba95-2810e33a9299/public_url) (PSPO I)
+- [SAFe® 6.0 Product Manager/Product Owner](https://www.credly.com/badges/ce4d43d0-8404-4e98-910b-a33508f98f17/public_url)
+- [AI Product Management Specialization](https://www.coursera.org/account/accomplishments/specialization/H4NB34M5Y9V4) (Duke University)
