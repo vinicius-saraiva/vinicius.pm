@@ -5,24 +5,25 @@ template = "page.html"
 
 <br/>
 
-### Flappy Chouette
+#### How AI is changing Product Management
 
-Play game here: [Flappy Chouette](https://flappychouette.fun/)
-
-<b>Talk: How coding Flappy Chouette made me a better PM - 4 lessons for Product Managers</b>
+Coding a game with AI: 4 lessons for PMs
 
 <div class="media-grid">
     <div class="media-item" style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; justify-content: center;">
         <div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
             <iframe 
                 style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100%; height: 100%;" 
-                src="https://www.youtube.com/embed/L4YNFWIb3ec?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
+                src="https://www.youtube.com/embed/R_MQ03YBCJ8?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
                 frameborder="0" 
                 allowfullscreen>
             </iframe>
         </div>
     </div>
 </div>
+
+Play game here: [Flappy Chouette](https://flappychouette.fun/)
+
 
 <br/>
 <br/>

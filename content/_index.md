@@ -39,17 +39,23 @@ PM who likes to code.
 
 <br>
 
+### Certifications
+- [AI Product Management Specialization](https://www.coursera.org/account/accomplishments/specialization/H4NB34M5Y9V4) (Duke University)
+- [SCRUM Professional Scrum Product Owner](https://www.credly.com/badges/19100cdc-f29a-4272-ba95-2810e33a9299/public_url) (PSPO I)
+- [SAFe® 6.0 Product Manager/Product Owner](https://www.credly.com/badges/ce4d43d0-8404-4e98-910b-a33508f98f17/public_url)
+
+<br>
+
 ### Education
+- BSc. in Economics and Finance at Bocconi University - Milan - Italy _(2019 - 2022)_
+  - Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis)
+
+<br>
+
 - Internships:
   - [Stone Co.](https://investors.stone.co/) (Project: [Open Banking API](https://docs.openbank.stone.com.br/))
   - [Startupbootcamp Accelerator](https://www.startupbootcamp.org/)
   - [Accenture](https://www.accenture.com/us-en/services/about/accenture-customer-innovation-network-milan) (Innovation Lab)
-
-<br>
-
-- BSc. in International Economics and Finance  
-  Bocconi University - Milan - Italy _(2019 - 2022)_
-  - Thesis: ["Business Model Strategy of Financial Super-Apps – Banco Inter Case Study"](/thesis)
 
 <br>
 
@@ -58,8 +64,3 @@ PM who likes to code.
   - [TuckLAB](https://magnuson.dartmouth.edu/tucklab-3/) Startup Ideation Program finalist
 
 <br>
-
-### Certifications
-- [SCRUM Professional Scrum Product Owner](https://www.credly.com/badges/19100cdc-f29a-4272-ba95-2810e33a9299/public_url) (PSPO I)
-- [SAFe® 6.0 Product Manager/Product Owner](https://www.credly.com/badges/ce4d43d0-8404-4e98-910b-a33508f98f17/public_url)
-- [AI Product Management Specialization](https://www.coursera.org/account/accomplishments/specialization/H4NB34M5Y9V4) (Duke University)
