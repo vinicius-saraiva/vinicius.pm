@@ -14,6 +14,20 @@ PM who likes to code.
 </a>
 
 <br>
+
+<a href="/files/Forever-young" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <img src="/images/download.png" alt="Download" width="20" height="20" style="margin-right: 5px; border: none; border-radius: 4px;">
+  <span>Download CV</span>
+</a>
+
+<br>
+
+<a href="mailto:v.saraiva.andrade@gmail.com" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <img src="/images/email.png" alt="Email" width="20" height="20" style="margin-right: 5px; border: none; border-radius: 4px;">
+  <span>Send me an email</span>
+</a>
+
+<br>
 <br>
 
 
