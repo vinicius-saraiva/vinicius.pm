@@ -7,8 +7,11 @@ template = "page.html"
 
 
 🦉 [How AI is changing Product Management](#how-ai-is-changing-product-management)
+
 🔄 [AI Translation Tool](#autotranslator)
+
 🏄‍♂️ [Adventure Tourism Platform](#poissonblanc-adventure-tourism)
+
 💸 [Bulk Payment Processor (iBanFirst API)](#bulk-payment-processor-ibanfirst-api)
 
 
