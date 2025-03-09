@@ -5,6 +5,15 @@ template = "page.html"
 
 <br/>
 
+
+🦉 [How AI is changing Product Management](#how-ai-is-changing-product-management)
+🔄 [AI Translation Tool](#autotranslator)
+🏄‍♂️ [Adventure Tourism Platform](#poissonblanc---adventure-tourism)
+💸 [Bulk Payment Processor (iBanFirst API)](#bulk-payment-processor-ibanfirst-api)
+
+
+<br/>
+
 #### How AI is changing Product Management
 
 Coding a game with AI: 4 lessons for PMs
@@ -28,6 +37,41 @@ Play game here: [Flappy Chouette](https://flappychouette.fun/)
 <br/>
 <br/>
 
+### AutoTranslator
+Tool that allows Localization Managers to translate their Localise.biz (Loco) projects using OpenAI API. Prompt is adapted to business context, platform (web, mobile) and language specificities. Users can also add a glossary file with their own terms.
+
+- AI Tools Used: Cursor, Claude-3.5-Sonnet
+- APIs: [OpenAI API](https://platform.openai.com/docs/api-reference/introduction), [Localise.biz API](https://localise.biz/api)
+- Languages: Javascript, HTML, CSS
+
+<br/>
+
+<div class="media-grid">
+    <div class="media-item">
+        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy" width="100%">
+    </div>
+</div>
+
+<br/>
+<br/>
+
+### PoissonBlanc - Adventure Tourism
+Platform for agency that makes adventure tourism in the state of Rio de Janeiro (Brazil) easier for French tourists. Visit [here](https://poissonblanc.vercel.app/)
+
+- AI Tools Used: v0.dev, Claude-3.7-Sonnet
+- Technologies: React, Next.js, Tailwind CSS, Shadcn UI, Leaflet (OpenStreetMap)
+
+<br/>
+
+<div class="media-grid">
+    <div class="media-item">
+        <img src="/images/poissonblanc.png" alt="PoissonBlanc" loading="lazy" width="100%">
+    </div>
+</div>
+
+<br/>
+<br/>
+
 ### Bulk Payment Processor (iBanFirst API)
 Built with the [iBanFirst API](https://docs.ibanfirst.com/), this project allows iBanFirst account holders to process bulk payments in a fast and efficient way.
 
@@ -45,22 +89,6 @@ Built with the [iBanFirst API](https://docs.ibanfirst.com/), this project allows
 <br/>
 <br/>
 
-### AutoTranslator
-Tool that allows Localization Managers to translate their Localise.biz (Loco) projects using OpenAI API. Prompt is adapted to business context, platform (web, mobile) and language specificities. Users can also add a glossary file with their own terms.
-
-- AI Tools Used: Cursor, Claude-3.5-Sonnet
-- APIs: [OpenAI API](https://platform.openai.com/docs/api-reference/introduction), [Localise.biz API](https://localise.biz/api)
-- Languages: Javascript, HTML, CSS
-
-<br/>
-
-<div class="media-grid">
-    <div class="media-item">
-        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy" width="100%">
-    </div>
-</div>
-
-<br/>
 
 
 <style>
