@@ -39,6 +39,59 @@ PM who likes to code.
 
 <br>
 
+👷 Toolbox:
+
+<div class="logo-carousel" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin: 20px 0;">
+    <!-- Analytics Tools -->
+    <div class="tool-icon" data-tooltip="Posthog - Product Analytics">
+        <a href="https://posthog.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/posthog.svg" alt="Posthog" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Metabase - Data Analytics">
+        <a href="https://www.metabase.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/metabase.svg" alt="Metabase" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Fullstory - Session Recording">
+        <a href="https://www.fullstory.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/fullstory.png" alt="Fullstory" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Jira - Project Management">
+        <a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/jira.svg" alt="Jira" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Productboard - Product Management">
+        <a href="https://www.productboard.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/productboard-small.png" alt="Productboard" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Figma - Design">
+        <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/figma.png" alt="Figma" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Cursor - AI-powered Code Editor">
+        <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/cursor.jfif" alt="Cursor" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Claude - AI Assistant">
+        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/claude-small.png" alt="Claude" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Postman - API Platform">
+        <a href="https://www.postman.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/postman.webp" alt="Postman" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+</div>
+
+<br>
+
 ### Certifications
 - [AI Product Management Specialization](https://www.coursera.org/account/accomplishments/specialization/H4NB34M5Y9V4) (Duke University)
 - [SCRUM Professional Scrum Product Owner](https://www.credly.com/badges/19100cdc-f29a-4272-ba95-2810e33a9299/public_url) (PSPO I)
@@ -64,3 +117,32 @@ PM who likes to code.
   - [TuckLAB](https://magnuson.dartmouth.edu/tucklab-3/) Startup Ideation Program finalist
 
 <br>
+
+
+<style>
+.tool-icon {
+    position: relative;
+}
+
+.tool-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #333;
+    color: white;
+    font-size: 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s ease;
+}
+
+.tool-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+</style>
