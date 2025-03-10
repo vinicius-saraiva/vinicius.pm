@@ -44,7 +44,7 @@ PM who likes to code.
 <div class="logo-carousel" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin: 20px 0;">
     <!-- Analytics Tools -->
     <div class="tool-icon" data-tooltip="Posthog - Product Analytics">
-        <a href="https://posthog.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://posthog.com" target="_blank" rel="noopener noreferrer" tabindex="0">
             <img src="/images/tools/posthog.svg" alt="Posthog" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
@@ -141,8 +141,27 @@ PM who likes to code.
     transition: opacity 0.1s ease;
 }
 
-.tool-icon:hover::after {
-    opacity: 1;
-    visibility: visible;
+/* Show tooltip on hover for desktop */
+@media (hover: hover) {
+    .tool-icon:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Show tooltip on tap for mobile */
+@media (hover: none) {
+    .tool-icon {
+        cursor: pointer;
+    }
+    .tool-icon:focus-within::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    /* Make the link tap-focusable */
+    .tool-icon a {
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+    }
 }
 </style>
