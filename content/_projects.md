@@ -34,7 +34,7 @@ Coding a game with AI: 4 lessons for PMs
     </div>
 </div>
 
-Play game here: [Flappy Chouette](https://flappychouette.fun/)
+Play game here: [Flappy Chouette](https://flappychouette.fun/game.html)
 
 
 <br/>
