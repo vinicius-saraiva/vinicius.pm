@@ -103,3 +103,13 @@
 .webring {
   margin: .375rem;
 }
+
+/* Custom footer link hover styles */
+#footer-container a.footer-site-link,
+#footer-container a.footer-zola-link {
+  background: transparent !important;
+}
+#footer-container a.footer-site-link:hover,
+#footer-container a.footer-zola-link:hover {
+  background: transparent !important;
+}

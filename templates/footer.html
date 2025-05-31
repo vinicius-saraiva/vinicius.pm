@@ -1,18 +1,30 @@
 <hr>
-<div id="footer-container">
-  {% if config.extra.footer_content_license %}
-    <div>Except where otherwise noted, content on this site is licensed under a 
-    {% if config.extra.footer_content_license_link %}
-    <a target="_blank" rel="noopener noreferrer" href="{{config.extra.footer_content_license_link}}">{{config.extra.footer_content_license}}</a>
-    {% else %}
-    {{config.extra.footer_content_license}}
-    {% endif %}
-    license.</div>
-  {% endif %}
-  <div>
+<div id="footer-container" style="flex-direction:column;align-items:center;text-align:center;">
+  <div style="margin-bottom:0.5rem;">
+    <br>
+    <img src="/files/logo_footer.jpg" alt="vinicius.pm logo" style="display:block;margin:0 auto;width:50px;height:50px;border-radius:0%;object-fit:cover;border:none;" />
   </div>
+  <div style="margin-bottom:0.25rem;">
+    <a href="/" class="footer-site-link" style="font-weight:bold;font-size:1.1em;text-decoration:none;color:inherit;">vinicius.pm</a>
+  </div>
+  <div style="font-size:0.95em;color:var(--text);">
+    Built in 🇧🇷 with <a href="https://www.getzola.org/themes/anemone/" class="footer-zola-link" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none;">Zola • Anemone</a>
+    <br>
+    <br>
+  </div>
+  {% if config.extra.footer_content_license %}
+    <div style="margin-top:0.5rem;font-size:0.85em;">
+      Except where otherwise noted, content on this site is licensed under a 
+      {% if config.extra.footer_content_license_link %}
+      <a target="_blank" rel="noopener noreferrer" href="{{config.extra.footer_content_license_link}}">{{config.extra.footer_content_license}}</a>
+      {% else %}
+      {{config.extra.footer_content_license}}
+      {% endif %}
+      license.
+    </div>
+  {% endif %}
   {% if config.generate_feeds %}
-  <div>
+  <div style="margin-top:0.5rem;">
     <a class="no-style" target="_blank" rel="noopener noreferrer" href="{{ get_url(path="atom.xml", trailing_slash=false) }}" title="Subscribe via RSS for updates."><svg class="icons"><use href="{{ get_url(path='icons.svg#rss', trailing_slash=false) | safe }}"></use></svg></a>
   </div>
   {% endif %}
