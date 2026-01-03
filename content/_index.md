@@ -6,7 +6,7 @@ template = "index.html"
 ## Vinicius Andrade
 PM who likes to code.
 
-🌎 Paris, France | Rio de Janeiro, Brazil
+🌎 Rio de Janeiro, Brazil
 
 <a href="https://www.linkedin.com/in/vinicius-saraiva/" style="display: inline-flex; align-items: center; text-decoration: none;">
   <img src="/images/linkedin.png" alt="LinkedIn" width="20" height="20" style="margin-right: 5px; border: none; border-radius: 1px;">
@@ -31,26 +31,34 @@ PM who likes to code.
 <br>
 
 
-### Product Manager at iBanFirst
-- Paris, France (Sept. 2022 - Present)
-- [B2B cross-border payment platform](https://www.ibanfirst.com/)
-- Leading client experience in web platform and mobile app
-- Project topics: UX/UI, Open Finance, Authentication, FX
+### Product Manager at Stone Co
+- Rio de Janeiro, Brazil (June 2025 - Present)
+- [Ton](https://www.ton.com.br/) brand — one of Brazil's largest fintechs ([NYSE: STNE](https://investors.stone.co/))
+- Leading Product Journeys squad
+- Building credit cards, Pix, investments, and financial products
+
+<br>
+
+### Guest Lecturer at Product Heroes
+- Teaching ["AI per Product Builder"](https://www.productheroes.it/ai-per-product-builder/) masterclass
+- [Product Heroes](https://www.productheroes.it/): Italy's largest PM community (9,000+ members)
+- Curriculum: AI-powered development, backend, API integration, AI services
+- Helping PMs, founders, and designers build functional MVPs
 
 <br>
 
 👷 Toolbox:
 
 <div class="logo-carousel" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: center; margin: 20px 0;">
-    <!-- Analytics Tools -->
+    <!-- Analytics -->
     <div class="tool-icon" data-tooltip="Posthog - Product Analytics">
         <a href="https://posthog.com" target="_blank" rel="noopener noreferrer" tabindex="0">
             <img src="/images/tools/posthog.svg" alt="Posthog" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
-    <div class="tool-icon" data-tooltip="Metabase - Data Analytics">
-        <a href="https://www.metabase.com" target="_blank" rel="noopener noreferrer">
-            <img src="/images/tools/metabase.svg" alt="Metabase" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+    <div class="tool-icon" data-tooltip="Amplitude - Product Analytics">
+        <a href="https://amplitude.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/amplitude.svg" alt="Amplitude" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
     <div class="tool-icon" data-tooltip="Fullstory - Session Recording">
@@ -58,29 +66,41 @@ PM who likes to code.
             <img src="/images/tools/fullstory.png" alt="Fullstory" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
-    <div class="tool-icon" data-tooltip="Jira - Project Management">
-        <a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer">
-            <img src="/images/tools/jira.svg" alt="Jira" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+    <div class="tool-icon" data-tooltip="Metabase - Data Analytics">
+        <a href="https://www.metabase.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/metabase.svg" alt="Metabase" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
-    <div class="tool-icon" data-tooltip="Productboard - Product Management">
-        <a href="https://www.productboard.com" target="_blank" rel="noopener noreferrer">
-            <img src="/images/tools/productboard-small.png" alt="Productboard" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+    <div class="tool-icon" data-tooltip="BigQuery - Data Warehouse">
+        <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/bigquery.svg" alt="BigQuery" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
+    <!-- Design -->
     <div class="tool-icon" data-tooltip="Figma - Design">
         <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer">
             <img src="/images/tools/figma.png" alt="Figma" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
-    <div class="tool-icon" data-tooltip="Cursor - AI-powered Code Editor">
+    <!-- Dev & AI -->
+    <div class="tool-icon" data-tooltip="Cursor - AI Code Editor">
         <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer">
             <img src="/images/tools/cursor.jfif" alt="Cursor" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
-    <div class="tool-icon" data-tooltip="Claude - AI Assistant">
-        <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">
-            <img src="/images/tools/claude-small.png" alt="Claude" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+    <div class="tool-icon" data-tooltip="Claude Code - AI Coding Agent">
+        <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/claude-small.png" alt="Claude Code" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Lovable - AI App Builder">
+        <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/lovable.svg" alt="Lovable" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
+        </a>
+    </div>
+    <div class="tool-icon" data-tooltip="Supabase - Backend Platform">
+        <a href="https://supabase.com" target="_blank" rel="noopener noreferrer">
+            <img src="/images/tools/supabase.svg" alt="Supabase" style="height: 35px; object-fit: contain; border: none !important; outline: none !important; border-radius: 0 !important;">
         </a>
     </div>
     <div class="tool-icon" data-tooltip="Postman - API Platform">
@@ -89,6 +109,18 @@ PM who likes to code.
         </a>
     </div>
 </div>
+
+<br>
+
+---
+
+### Previously
+
+**Product Manager at iBanFirst**
+- Paris, France (Sept. 2022 - May 2025)
+- [B2B cross-border payment platform](https://www.ibanfirst.com/)
+- Led client experience in web platform and mobile app
+- Project topics: UX/UI, Open Finance, Authentication, FX
 
 <br>
 
@@ -114,7 +146,7 @@ PM who likes to code.
 
 - B.A. in Economics at Dartmouth College - Hanover, NH - USA _(2018 - 2019)_
   - [Dartmouth Entrepreneurial Network](https://magnuson.dartmouth.edu/experiential-learning-2/)
-  - [TuckLAB](https://magnuson.dartmouth.edu/tucklab-3/) Startup Ideation Program finalist
+  - [TuckLAB](https://tuck.dartmouth.edu/news/articles/tuck-launches-bold-entrepreneurship-program-for-dartmouth-undergraduates) Startup Ideation Program finalist
 
 <br>
 
