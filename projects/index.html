@@ -85,6 +85,11 @@
         &#x2F;projects&#x2F;
       </a>
     
+      <a href="&#x2F;speaking" class="">
+        
+        &#x2F;lectures&#x2F;
+      </a>
+    
     <div>
       <input type="checkbox" id="theme-toggle" style="display: none;">
       <label for="theme-toggle" id="theme-toggle-label"><svg id="theme-icon" class="icons"><use href="https://vinicius.pm/icons.svg#lightMode"></use></svg></label>
@@ -103,63 +108,76 @@
 
 
 <br/>
-<p>🦉 <a href="https://vinicius.pm/projects/#how-ai-is-changing-product-management">How AI is changing Product Management</a></p>
-<p>🔄 <a href="https://vinicius.pm/projects/#autotranslator">AI Translation Tool</a></p>
-<p>🏄‍♂️ <a href="https://vinicius.pm/projects/#poissonblanc-adventure-tourism">Adventure Tourism Platform</a></p>
-<p>💸 <a href="https://vinicius.pm/projects/#bulk-payment-processor-ibanfirst-api">Bulk Payment Processor (iBanFirst API)</a></p>
+<p><a href="https://vinicius.pm/projects/#ai-localization-platform">AI Localization Platform</a> | <a href="https://vinicius.pm/projects/#bulk-payment-processor">Bulk Payment Processor</a> | <a href="https://vinicius.pm/projects/#macartebresil">MaCarteBrésil</a></p>
 <br/>
-<h4 id="how-ai-is-changing-product-management">How AI is changing Product Management</h4>
-<p>Coding a game with AI: 4 lessons for PMs</p>
-<div class="media-grid">
-    <div class="media-item" style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; justify-content: center;">
-        <div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
-            <iframe 
-                style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100%; height: 100%;" 
-                src="https://www.youtube.com/embed/R_MQ03YBCJ8?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</div>
-<p>Play game here: <a href="https://flappychouette.fun/game.html">Flappy Chouette</a></p>
-<br/>
-<br/>
-<h3 id="autotranslator">AutoTranslator</h3>
-<p>Tool that allows Localization Managers to translate their Localise.biz (Loco) projects using OpenAI API. Prompt is adapted to business context, platform (web, mobile) and language specificities. Users can also add a glossary file with their own terms.</p>
+<h3 id="ai-localization-platform">AI Localization Platform</h3>
+<p>Internal tool for automating iBanFirst's multi-language deployment.</p>
 <ul>
-<li>AI Tools Used: Cursor, Claude-3.5-Sonnet</li>
-<li>APIs: <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a>, <a href="https://localise.biz/api">Localise.biz API</a></li>
-<li>Languages: Javascript, HTML, CSS</li>
+<li>Reduced translation time from weeks to hours for 10,000+ keys</li>
+<li>Context-aware prompts adapted to business domain and platform (web/mobile)</li>
+<li>Custom glossary support for company-specific terms</li>
+<li>Preserves HTML/CSS/links during translation</li>
+<li>Enabled expansion into Poland and Greece</li>
 </ul>
+<p><strong>Stack:</strong> Cursor, Claude-3.5-Sonnet, <a href="https://platform.openai.com/docs/api-reference/introduction">OpenAI API</a>, <a href="https://localise.biz/api">Localise.biz API</a>, Javascript</p>
 <br/>
-<div class="media-grid">
-    <div class="media-item">
-        <img src="/images/autotranslator.png" alt="AutoTranslator" loading="lazy" width="100%">
-    </div>
+<div class="gallery">
+    <img src="/images/home.png" alt="Home" onclick="openLightbox(this)">
+    <img src="/images/settings.png" alt="Settings" onclick="openLightbox(this)">
+    <img src="/images/glossary.png" alt="Glossary" onclick="openLightbox(this)">
+    <img src="/images/manual-mode.png" alt="Manual Mode" onclick="openLightbox(this)">
 </div>
-<br/>
-<br/>
-<h3 id="poissonblanc-adventure-tourism">PoissonBlanc - Adventure Tourism</h3>
-<p>Platform for agency that makes adventure tourism in the state of Rio de Janeiro (Brazil) easier for French tourists. Visit <a href="https://poissonblanc.vercel.app/">here</a></p>
-<ul>
-<li>AI Tools Used: v0.dev, Claude-3.7-Sonnet</li>
-<li>Technologies: React, Next.js, Tailwind CSS, Shadcn UI, Leaflet (OpenStreetMap)</li>
-</ul>
-<br/>
-<div class="media-grid">
-    <div class="media-item">
-        <img src="/images/poissonblanc.png" alt="PoissonBlanc" loading="lazy" width="100%">
-    </div>
+<div id="lightbox" onclick="closeLightbox(event)">
+    <span id="lightbox-close" onclick="forceCloseLightbox()">&times;</span>
+    <span id="lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</span>
+    <img id="lightbox-img" src="" alt="">
+    <span id="lightbox-next" onclick="navigateLightbox(1)">&#10095;</span>
 </div>
+<script>
+let galleryImages = [];
+let currentIndex = 0;
+
+function openLightbox(img) {
+    galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+    currentIndex = galleryImages.indexOf(img);
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+    if (e && e.target.id !== 'lightbox') return;
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+}
+function forceCloseLightbox() {
+    event.stopPropagation();
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+}
+function navigateLightbox(dir) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + dir + galleryImages.length) % galleryImages.length;
+    document.getElementById('lightbox-img').src = galleryImages[currentIndex].src;
+}
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById('lightbox').style.display === 'flex') {
+        if (e.key === 'Escape') { document.getElementById('lightbox').style.display = 'none'; document.body.style.overflow = ''; }
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+    }
+});
+</script>
 <br/>
 <br/>
-<h3 id="bulk-payment-processor-ibanfirst-api">Bulk Payment Processor (iBanFirst API)</h3>
-<p>Built with the <a href="https://docs.ibanfirst.com/">iBanFirst API</a>, this project allows iBanFirst account holders to process bulk payments in a fast and efficient way.</p>
+<h3 id="bulk-payment-processor">Bulk Payment Processor</h3>
+<p>Proof of concept built to demonstrate feasibility of a highly-requested client feature.</p>
 <ul>
-<li>AI Tools Used: Cursor, Claude-3.5-Sonnet</li>
-<li>Languages: Python, Javascript, HTML, CSS</li>
+<li>Addressed gap between manual payments (slow) and full API integration (too complex)</li>
+<li>Import Excel/CSV file → automatic payment creation via <a href="https://docs.ibanfirst.com/">iBanFirst API</a></li>
+<li>Handles errors, malformatting, and edge cases</li>
+<li>Successfully demoed to company, validated feature for dev team</li>
 </ul>
+<p><strong>Stack:</strong> Cursor, Claude-3.5-Sonnet, Python, Javascript</p>
 <br/>
 <div class="media-grid">
     <div class="media-item">
@@ -168,7 +186,81 @@
 </div>
 <br/>
 <br/>
+<hr />
+<h3 id="macartebresil">MaCarteBresil</h3>
+<p><em>Personal project</em></p>
+<p>Simple trip planner for Brazil. Select cities, set the number of days for each, and get a map showing your full itinerary. You should visit too — <a href="https://macartebresil.vercel.app/">plan your trip here</a>.</p>
+<p><strong>Stack:</strong> v0.dev, Claude-3.7-Sonnet, React, Next.js, Tailwind CSS, Leaflet</p>
+<br/>
+<div class="media-grid">
+    <div class="media-item">
+        <img src="/images/poissonblanc.png" alt="MaCarteBrésil" loading="lazy" width="100%">
+    </div>
+</div>
+<br/>
+<br/>
 <style>
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.gallery img {
+    height: 120px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    border: none !important;
+    outline: none !important;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+#lightbox-prev, #lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+}
+
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
 
 .media-grid {
     display: grid;

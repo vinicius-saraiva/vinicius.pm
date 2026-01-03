@@ -16,11 +16,11 @@
 
 
 
-<title>Talks</title>
+<title>Lectures &amp; Talks</title>
 
 
 
-<meta name="title" content="Talks">
+<meta name="title" content="Lectures &amp; Talks">
 
 
 
@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="Vinicius&#x27;s Portfolio">
 
 
-<meta property="og:title" content="Talks">
+<meta property="og:title" content="Lectures &amp; Talks">
 
 
 
@@ -39,7 +39,7 @@
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://vinicius.pm/speaking/">
 
-<meta property="twitter:title" content="Talks">
+<meta property="twitter:title" content="Lectures &amp; Talks">
 
 
 
@@ -85,6 +85,11 @@
         &#x2F;projects&#x2F;
       </a>
     
+      <a href="&#x2F;speaking" class="">
+        
+        &#x2F;lectures&#x2F;
+      </a>
+    
     <div>
       <input type="checkbox" id="theme-toggle" style="display: none;">
       <label for="theme-toggle" id="theme-toggle-label"><svg id="theme-icon" class="icons"><use href="https://vinicius.pm/icons.svg#lightMode"></use></svg></label>
@@ -98,18 +103,239 @@
       </header>
       <main>
           
-<h1>Talks</h1>
+<h1>Lectures &amp; Talks</h1>
 
 
 
-<p>I have spoken in public for the past 5+ years, both in academic and professional environments.</p>
-<ul>
-<li>50-200+ people audience</li>
-<li>In-person and virtual presentations</li>
-<li>Keynotes / Workshops / Hands-on interactive sessions</li>
-<li>Languages: Portuguese, French, Italian, and English</li>
-</ul>
 <br>
+<h3 id="ai-per-product-builder-masterclass">AI per Product Builder (Masterclass)</h3>
+<p>Guest Lecturer at <a href="https://www.productheroes.it/">Product Heroes</a>, teaching product professionals how to build functional MVPs using AI-powered development tools.</p>
+<ul>
+<li>4-module curriculum (16 hours total)</li>
+<li>Topics: Design/Frontend, Backend, API Integration, AI Services</li>
+<li>Tools taught: Lovable, Supabase, Postman, OpenAI APIs, HuggingFace</li>
+<li>Target audience: PMs, founders, designers</li>
+<li><a href="https://www.productheroes.it/ai-per-product-builder/">Course page</a></li>
+</ul>
+<p><strong>What students say:</strong></p>
+<blockquote>
+<p><em>&quot;I found the use of AI tools to build working prototypes in a short time really relevant. The most valuable part was discovering that, with the right tools, you can create a real prototype very quickly.&quot;</em>
+— <strong>Irene Romanello</strong>, Product Manager @ Fiscozen</p>
+</blockquote>
+<blockquote>
+<p><em>&quot;It gave me the concrete ability to create effective MVPs without having to involve the development team.&quot;</em>
+— <strong>Laura Serafin</strong>, UI Designer @ MUGO</p>
+</blockquote>
+<blockquote>
+<p><em>&quot;The best practices for getting the most out of Lovable and the libraries to integrate its features were among the most important aspects of the course. Very concrete and actionable input.&quot;</em>
+— <strong>Luca de Franceschi</strong>, Senior Product Manager @ Intento</p>
+</blockquote>
+<br>
+<hr />
+<h3 id="how-ai-is-changing-product-management">How AI is changing Product Management</h3>
+<p>Coding a game with AI: 4 lessons for PMs</p>
+<div class="media-grid">
+    <div class="media-item" style="max-width: 800px; margin: 0 auto; width: 100%; display: flex; justify-content: center;">
+        <div style="position: relative; width: 100%; padding-bottom: 42.55%; background-color: transparent;">
+            <iframe
+                style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/R_MQ03YBCJ8?controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+<br>
+<hr />
+<h3 id="from-digital-bank-account-to-super-app">From digital bank account to Super-App</h3>
+<p><em>An investigation of the Business Model Innovation Strategy of Banco Inter</em></p>
+<ul>
+<li>Thesis supervisor: Professor Anna Eugenia Omarini</li>
+<li>BSc. in International Economics and Finance</li>
+<li>Bocconi University, Milan, Italy</li>
+<li>July 2022</li>
+</ul>
+<div id="pdf-viewer-container">
+    <div id="pdf-controls">
+        <button id="prev-page" title="Previous pages">←</button>
+        <span id="page-info">Loading...</span>
+        <button id="next-page" title="Next pages">→</button>
+        <button id="fullscreen-btn" title="Fullscreen">⛶</button>
+        <a href="/files/thesis.pdf" download id="download-btn" title="Download PDF"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+    </div>
+    <div id="pdf-canvas-container">
+        <canvas id="pdf-canvas-left"></canvas>
+        <canvas id="pdf-canvas-right"></canvas>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs" type="module"></script>
+<script type="module">
+    const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.worker.min.mjs';
+
+    const url = '/files/thesis.pdf';
+    let pdfDoc = null;
+    let currentSpread = 0; // 0 = pages 1-2, 1 = pages 3-4, etc.
+    let rendering = false;
+    const canvasLeft = document.getElementById('pdf-canvas-left');
+    const canvasRight = document.getElementById('pdf-canvas-right');
+    const ctxLeft = canvasLeft.getContext('2d');
+    const ctxRight = canvasRight.getContext('2d');
+    const container = document.getElementById('pdf-canvas-container');
+
+    async function renderPage(canvas, ctx, pageNum) {
+        if (pageNum < 1 || pageNum > pdfDoc.numPages) {
+            canvas.style.display = 'none';
+            return;
+        }
+        canvas.style.display = 'block';
+        const page = await pdfDoc.getPage(pageNum);
+        const containerWidth = container.clientWidth;
+        const pageWidth = (containerWidth - 30) / 2; // 30px for gap
+        const unscaledViewport = page.getViewport({ scale: 1 });
+        const scale = pageWidth / unscaledViewport.width;
+        const viewport = page.getViewport({ scale: scale });
+
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+    }
+
+    async function renderSpread() {
+        if (rendering) return;
+        rendering = true;
+
+        const leftPage = currentSpread * 2 + 1;
+        const rightPage = currentSpread * 2 + 2;
+
+        await Promise.all([
+            renderPage(canvasLeft, ctxLeft, leftPage),
+            renderPage(canvasRight, ctxRight, rightPage)
+        ]);
+
+        // Update page info
+        if (rightPage <= pdfDoc.numPages) {
+            document.getElementById('page-info').textContent = leftPage + '-' + rightPage + ' / ' + pdfDoc.numPages;
+        } else {
+            document.getElementById('page-info').textContent = leftPage + ' / ' + pdfDoc.numPages;
+        }
+
+        rendering = false;
+    }
+
+    function getMaxSpread() {
+        return Math.ceil(pdfDoc.numPages / 2) - 1;
+    }
+
+    document.getElementById('prev-page').addEventListener('click', function() {
+        if (currentSpread <= 0) return;
+        currentSpread--;
+        renderSpread();
+    });
+
+    document.getElementById('next-page').addEventListener('click', function() {
+        if (currentSpread >= getMaxSpread()) return;
+        currentSpread++;
+        renderSpread();
+    });
+
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
+        const viewer = document.getElementById('pdf-viewer-container');
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            viewer.requestFullscreen();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' && currentSpread > 0) {
+            currentSpread--;
+            renderSpread();
+        } else if (e.key === 'ArrowRight' && currentSpread < getMaxSpread()) {
+            currentSpread++;
+            renderSpread();
+        }
+    });
+
+    window.addEventListener('resize', function() {
+        if (pdfDoc) renderSpread();
+    });
+
+    pdfjsLib.getDocument(url).promise.then(function(pdf) {
+        pdfDoc = pdf;
+        renderSpread();
+    });
+</script>
+<style>
+#pdf-viewer-container {
+    width: 100%;
+    margin: 20px 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#pdf-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px;
+    background: #333;
+}
+#pdf-controls button, #pdf-controls a {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#pdf-controls button:hover, #pdf-controls a:hover {
+    background: #777;
+}
+#page-info {
+    color: white;
+    font-size: 14px;
+    min-width: 100px;
+    text-align: center;
+}
+#pdf-canvas-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#pdf-canvas-left, #pdf-canvas-right {
+    max-width: calc(50% - 15px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+#pdf-viewer-container:fullscreen {
+    background: #222;
+    display: flex;
+    flex-direction: column;
+}
+#pdf-viewer-container:fullscreen #pdf-canvas-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+<br>
+<hr />
+<h2 id="talks">Talks</h2>
+<p>I've given talks and workshops over the years — here are some moments.</p>
 <h3 id="gallery">Gallery</h3>
 <div class="media-grid">
     <!-- Video -->
@@ -161,7 +387,7 @@
     align-items: center;
 }
 
-.media-item img, 
+.media-item img,
 .media-item video {
     width: 100%;
     height: 100%;
@@ -171,6 +397,7 @@
     align-self: center;
 }
 </style>
+
 
 <p class="tags-data">
 
