@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Vinicius Saraiva Andrade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: white;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2E86AB;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #2E86AB;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 9pt;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #2E86AB;
+            text-decoration: none;
+        }
+
+        .contact-row {
+            margin: 3px 0;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2E86AB;
+            border-bottom: 1px solid #2E86AB;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Jobs */
+        .job {
+            margin-bottom: 8px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .job-title a {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .job-location {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .job ul {
+            margin-left: 15px;
+            font-size: 9.5pt;
+        }
+
+        .job li {
+            margin-bottom: 2px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .skill-category {
+            margin-bottom: 6px;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            font-size: 9pt;
+            color: #2E86AB;
+        }
+
+        .skill-content {
+            font-size: 9pt;
+        }
+
+        /* Education */
+        .edu {
+            margin-bottom: 8px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .edu-date {
+            font-size: 9pt;
+            color: #666;
+        }
+
+        .edu-location {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .edu ul {
+            margin-left: 15px;
+            font-size: 9pt;
+            margin-top: 2px;
+        }
+
+        .edu li {
+            margin-bottom: 1px;
+        }
+
+        /* Compact list for languages */
+        .inline-list {
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>VINICIUS SARAIVA ANDRADE</h1>
+        <div class="contact-info">
+            <div class="contact-row">
+                <a href="https://linkedin.com/in/vinicius-saraiva/">linkedin.com/in/vinicius-saraiva</a> ·
+                <a href="mailto:v.saraiva.andrade@gmail.com">v.saraiva.andrade@gmail.com</a>
+            </div>
+            <div class="contact-row">
+                Rio de Janeiro, Brazil · +55 24 99267-9147 (WhatsApp)
+            </div>
+            <div class="contact-row">
+                Portfolio: <a href="https://vinicius.pm">vinicius.pm</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Product Manager at <a href="https://investors.stone.co/">Stone Co.</a> (Ton brand)</span>
+                <span class="job-date">June 2025 – Present</span>
+            </div>
+            <div class="job-location">Rio de Janeiro, Brazil – On-site</div>
+            <ul>
+                <li>Stone is one of Brazil's largest fintechs (NYSE: STNE); Ton serves micro-merchants</li>
+                <li>Leading Product Journeys squad focused on consumer financial products</li>
+                <li>Building credit cards, Pix payments, investments, and banking features</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Guest Lecturer at <a href="https://www.productheroes.it/">Product Heroes</a></span>
+                <span class="job-date">2025 – Present</span>
+            </div>
+            <div class="job-location">Remote (Italy)</div>
+            <ul>
+                <li>Teaching "AI per Product Builder" masterclass at Italy's largest PM community (9,000+ members)</li>
+                <li>4-module curriculum (16h): Design/Frontend, Backend, API Integration, AI Services</li>
+                <li>Helping PMs, founders, and designers build functional MVPs using AI tools</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Product Manager at <a href="https://www.ibanfirst.com/">iBanFirst S.A.</a></span>
+                <span class="job-date">Oct. 2022 – May 2025</span>
+            </div>
+            <div class="job-location">Paris, France – On-site</div>
+            <ul>
+                <li>B2B cross-border payments and FX platform for enterprises</li>
+                <li>Led end-to-end product development of web platform and mobile app</li>
+                <li>Projects: authentication, open banking, hedging, FX, user experience</li>
+                <li>Built AI Localization Platform: reduced translation from weeks to hours for 10,000+ keys</li>
+                <li>Built Bulk Payment Processor PoC: validated highly-requested feature for dev team</li>
+                <li>Delivery through Scrum and SAFe; regular presentations to 200+ colleagues</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Strategy & Consulting Intern at Accenture Innovation Center</span>
+                <span class="job-date">Feb. – Aug. 2022</span>
+            </div>
+            <div class="job-location">Milan, Italy – On-site</div>
+            <ul>
+                <li>Market analysis, startup scouting, emerging tech research</li>
+                <li>Projects: payment risk management, crypto acceptance, E-POS strategy</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Product Summer Analyst at <a href="https://investors.stone.co/">Stone Co.</a></span>
+                <span class="job-date">Jun. – Sep. 2021</span>
+            </div>
+            <div class="job-location">São Paulo, Brazil – Remote</div>
+            <ul>
+                <li>Structured Stone's Open Banking Payments API partnership offer</li>
+                <li>Analyzed Open Banking regulation and API providers in Brazil and USA</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills & Languages</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <span class="skill-label">Certifications:</span>
+                <div class="skill-content">AI Product Management (Duke), PSPO I, SAFe 6.0 PM/PO</div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-label">Languages:</span>
+                <div class="skill-content">Portuguese (native), English, Italian, French (fluent)</div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-label">Analytics:</span>
+                <div class="skill-content">Posthog, Amplitude, Fullstory, Metabase (SQL), BigQuery</div>
+            </div>
+            <div class="skill-category">
+                <span class="skill-label">AI & Dev Tools:</span>
+                <div class="skill-content">Cursor, Claude, Lovable, Supabase, Postman, Python</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu">
+            <div class="edu-header">
+                <span class="edu-title">BSc. in International Economics and Finance – Università Bocconi</span>
+                <span class="edu-date">2019 – 2022</span>
+            </div>
+            <div class="edu-location">Milan, Italy</div>
+            <ul>
+                <li>Thesis: Business Model Strategy of Financial Super-Apps – Banco Inter Case Study</li>
+                <li>Member of JEME Bocconi Studenti (Junior Enterprise)</li>
+            </ul>
+        </div>
+
+        <div class="edu">
+            <div class="edu-header">
+                <span class="edu-title">BA in Economics – Dartmouth College</span>
+                <span class="edu-date">2018 – 2019</span>
+            </div>
+            <div class="edu-location">New Hampshire, USA</div>
+            <ul>
+                <li>Finalist at TuckLAB Startup Ideation Program (Tuck Business School)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
