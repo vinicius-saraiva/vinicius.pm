@@ -145,7 +145,7 @@ PM who likes to code.
 <br>
 
 - B.A. in Economics at Dartmouth College - Hanover, NH - USA _(2018 - 2019)_
-  - [Dartmouth Entrepreneurial Network](https://magnuson.dartmouth.edu/experiential-learning-2/)
+  - [Dartmouth Entrepreneurial Network](https://magnuson.dartmouth.edu/)
   - [TuckLAB](https://tuck.dartmouth.edu/news/articles/tuck-launches-bold-entrepreneurship-program-for-dartmouth-undergraduates) Startup Ideation Program finalist
 
 <br>
