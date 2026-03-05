@@ -5,9 +5,36 @@ template = "page.html"
 
 <br/>
 
-[AI Localization Platform](#ai-localization-platform) | [Bulk Payment Processor](#bulk-payment-processor) | [MaCarteBrésil](#macartebresil)
+[Silver Remote](#silver-remote) | [AI Localization Platform](#ai-localization-platform) | [Bulk Payment Processor](#bulk-payment-processor) | [MaCarteBrésil](#macartebresil)
 
 <br/>
+
+### Silver Remote
+*Personal project*
+
+macOS menu bar app to control Apple TV 2nd and 3rd generation. Born from trying to hack my Apple TV with [Claude Code](https://claude.ai/claude-code) — turned into a fully working remote. The entire project was built with Claude Code, from the PyObjC menu bar app to the landing page.
+
+- Auto-discovers Apple TV on your local network
+- D-pad, menu, play/pause — all from your menu bar
+- Keyboard shortcuts for quick control
+- Self-contained DMG, no dependencies to install
+
+**Stack:** Claude Code, Python, PyObjC, Flask, pyatv, HTML/CSS
+
+[Landing page](https://vinicius.pm/silver-remote/) | [GitHub](https://github.com/vinicius-saraiva/silver-remote)
+
+<br/>
+
+<div class="media-grid">
+    <div class="media-item">
+        <img src="/silver-remote/mockup-menubar.png" alt="Silver Remote" loading="lazy" width="100%">
+    </div>
+</div>
+
+<br/>
+<br/>
+
+---
 
 ### AI Localization Platform
 Internal tool for automating iBanFirst's multi-language deployment.
