@@ -12,7 +12,7 @@ template = "page.html"
 ### Silver Remote
 *Personal project*
 
-macOS menu bar app to control Apple TV 2nd and 3rd generation. Born from trying to hack my Apple TV with [Claude Code](https://claude.ai/claude-code) — turned into a fully working remote. The entire project was built with Claude Code, from the PyObjC menu bar app to the landing page.
+macOS menu bar app to control Apple TV 2nd and 3rd generation. Born from trying to hack my Apple TV with [Claude Code](https://claude.ai/claude-code) — turned into a fully working remote.
 
 - Auto-discovers Apple TV on your local network
 - D-pad, menu, play/pause — all from your menu bar
@@ -27,7 +27,7 @@ macOS menu bar app to control Apple TV 2nd and 3rd generation. Born from trying 
 
 <div class="media-grid">
     <div class="media-item">
-        <img src="/silver-remote/mockup-menubar.png" alt="Silver Remote" loading="lazy" width="100%">
+        <img src="/silver-remote/mockup-menubar.png" alt="Silver Remote" loading="lazy" width="75%">
     </div>
 </div>
 
