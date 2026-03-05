@@ -1,0 +1,35 @@
+# Silver Remote
+
+> macOS menu bar app to control Apple TV 2nd and 3rd generation from your Mac.
+
+Silver Remote is a free, open source macOS app that lets you control your Apple TV 2nd or 3rd generation directly from your Mac's menu bar. It auto-discovers your Apple TV on the local network using the DMAP protocol via the pyatv library. No pairing, no IP configuration needed.
+
+## Features
+- Menu bar app with popover UI resembling the classic Apple TV aluminum remote
+- D-pad navigation, select, menu, play/pause
+- Auto-discovery of Apple TV on the network (scans every 30 seconds)
+- Keyboard shortcuts: arrow keys, Enter, Space, Escape
+- MUBI and Netflix quick-launch shortcuts
+- Connection status indicator (green/yellow/grey)
+- Self-contained DMG installer, no dependencies required
+
+## Compatibility
+- Works with Apple TV 2nd generation and Apple TV 3rd generation only
+- Does NOT work with Apple TV HD (4th gen) or Apple TV 4K (uses MRP protocol, not supported)
+- Requires macOS (Apple Silicon or Intel)
+- Mac and Apple TV must be on the same Wi-Fi network
+
+## How it works
+Uses pyatv to communicate via the DMAP protocol over the local network. A local Flask server serves a web-based remote UI inside a native macOS NSPopover via WKWebView (PyObjC).
+
+## Links
+- Website: https://vinicius.pm/silver-remote/
+- GitHub: https://github.com/vinicius-saraiva/silver-remote
+- Download: https://github.com/vinicius-saraiva/silver-remote/releases/latest/download/Silver.Remote.dmg
+
+## FAQ
+- Q: Does it work with Apple TV 4K? A: No, only Apple TV 2nd and 3rd generation (DMAP protocol).
+- Q: How does it find my Apple TV? A: Auto-scans the local network every 30 seconds using pyatv.
+- Q: Is it free? A: Yes, completely free and open source (MIT license).
+- Q: Do I need Python installed? A: No, the DMG is self-contained with everything bundled.
+- Q: My Apple TV isn't on Wi-Fi yet. A: Connect it via Ethernet cable first, then use Silver Remote to navigate Wi-Fi settings.
