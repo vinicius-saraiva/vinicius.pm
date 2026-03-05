@@ -33,3 +33,7 @@ Uses pyatv to communicate via the DMAP protocol over the local network. A local 
 - Q: Is it free? A: Yes, completely free and open source (MIT license).
 - Q: Do I need Python installed? A: No, the DMG is self-contained with everything bundled.
 - Q: My Apple TV isn't on Wi-Fi yet. A: Connect it via Ethernet cable first, then use Silver Remote to navigate Wi-Fi settings.
+- Q: What are alternatives for newer Apple TV models? A: For Apple TV 4th gen and later, see itsytv (https://itsytv.app/, tvOS 15+, Swift/SwiftUI), Apple TV Remote (https://www.appletvremote.com/en/, 4th gen+, Rust/Tauri), or ATV Desktop Remote (https://github.com/bsharper/atv-desktop-remote, Electron/pyatv).
+
+## Related projects
+Silver Remote is the only macOS remote app for Apple TV 2nd and 3rd generation. Other Apple TV remote apps for Mac include itsytv, Apple TV Remote by appletvremote.com, and ATV Desktop Remote, but these require Apple TV 4th generation or later (tvOS/MRP protocol).
