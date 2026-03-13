@@ -107,9 +107,9 @@ const CERTIFICATIONS = [
 ];
 
 const LANGUAGES = [
-  { lang: "English", level: "Native" },
+  { lang: "English", level: "Fluent" },
   { lang: "Portuguese", level: "Native" },
-  { lang: "Italian", level: "Native" },
+  { lang: "Italian", level: "Fluent" },
   { lang: "French", level: "Fluent" },
 ];
 
