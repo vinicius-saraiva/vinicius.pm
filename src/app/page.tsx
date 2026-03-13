@@ -72,15 +72,13 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <section
         ref={register("hero")}
-        className="min-h-screen flex flex-col justify-center relative"
+        className="min-h-screen flex flex-col justify-center relative overflow-hidden"
       >
         <div
-          className="absolute pointer-events-none"
+          className="absolute pointer-events-none w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]"
           style={{
             top: "15%",
             left: "55%",
-            width: 500,
-            height: 500,
             background: "radial-gradient(circle, var(--accent-glow) 0%, transparent 65%)",
             filter: "blur(80px)",
           }}

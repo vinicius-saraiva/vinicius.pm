@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isWarm = pathname === "/work";
+  const isWarm = pathname.startsWith("/work");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -51,15 +51,13 @@ export function Nav() {
             </Link>
             <a
               href="#contact"
-              className="font-mono text-base px-5 py-2 hover:text-white transition-all"
+              className={`font-mono text-base px-5 py-2 hover:text-white transition-all ${isWarm ? "hover:bg-[var(--warm)]" : "hover:bg-[var(--accent)]"}`}
               style={{
                 color: isWarm ? "var(--warm)" : "var(--accent)",
                 borderWidth: 1,
                 borderStyle: "solid",
                 borderColor: isWarm ? "var(--warm)" : "var(--accent)",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = isWarm ? "var(--warm)" : "var(--accent)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
             >
               Contact
             </a>
@@ -69,9 +67,8 @@ export function Nav() {
 
       {/* ─── BOTTOM TAB BAR (mobile only) ─── */}
       <div
-        className="fixed bottom-0 left-0 z-50 sm:hidden border-t border-border overflow-hidden"
+        className="fixed bottom-0 left-0 right-0 z-50 block sm:hidden border-t border-border"
         style={{
-          width: "100vw",
           background: "var(--nav-bg)",
           backdropFilter: "blur(12px) saturate(1.2)",
           paddingBottom: "env(safe-area-inset-bottom)",
