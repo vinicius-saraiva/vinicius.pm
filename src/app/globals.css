@@ -61,6 +61,12 @@
     transition: background 0.4s, color 0.4s;
   }
 
+  @media (max-width: 639px) {
+    body {
+      padding-bottom: calc(56px + env(safe-area-inset-bottom));
+    }
+  }
+
   ::selection {
     background: var(--accent-soft);
     color: var(--accent);
