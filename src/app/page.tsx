@@ -177,7 +177,7 @@ export default function Home() {
             <div className="flex gap-4 items-center">
               <a
                 href="#contact"
-                onClick={() => posthog.capture("cta_get_in_touch")}
+                onClick={() => posthog.capture("contact_click", { label: "Hero", value: "Get in Touch" })}
                 className="font-body text-sm font-semibold text-white bg-accent px-7 py-3 hover:bg-accent-hover transition-colors"
               >
                 Get in Touch

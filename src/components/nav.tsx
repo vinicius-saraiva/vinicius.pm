@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import posthog from "posthog-js";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +52,8 @@ export function Nav() {
             </Link>
             <a
               href="#contact"
-              className={`font-mono text-base px-5 py-2 hover:text-white transition-all ${isWarm ? "hover:bg-[var(--warm)]" : "hover:bg-[var(--accent)]"}`}
+              onClick={() => posthog.capture("contact_click", { label: "Nav", value: "Contact button" })}
+              className={`font-mono text-base px-5 py-2 transition-all ${isWarm ? "hover:bg-[var(--warm)] hover:text-[#1a1a1a]" : "hover:bg-[var(--accent)] hover:text-white"}`}
               style={{
                 color: isWarm ? "var(--warm)" : "var(--accent)",
                 borderWidth: 1,
