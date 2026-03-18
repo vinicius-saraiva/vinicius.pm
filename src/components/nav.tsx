@@ -53,13 +53,11 @@ export function Nav() {
             <a
               href="#contact"
               onClick={() => posthog.capture("contact_click", { label: "Nav", value: "Contact button" })}
-              className={`font-mono text-base px-5 py-2 transition-all ${isWarm ? "hover:bg-[var(--warm)] hover:text-[#1a1a1a]" : "hover:bg-[var(--accent)] hover:text-white"}`}
-              style={{
-                color: isWarm ? "var(--warm)" : "var(--accent)",
-                borderWidth: 1,
-                borderStyle: "solid",
-                borderColor: isWarm ? "var(--warm)" : "var(--accent)",
-              }}
+              className={`font-mono text-base px-5 py-2 border transition-all ${
+                isWarm
+                  ? "text-[var(--warm)] border-[var(--warm)] hover:bg-[var(--warm)] hover:!text-[#1a1a1a]"
+                  : "text-[var(--accent)] border-[var(--accent)] hover:bg-[var(--accent)] hover:!text-white"
+              }`}
             >
               Contact
             </a>
