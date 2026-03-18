@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Nav } from "@/components/nav";
 import { GridOverlay } from "@/components/grid-overlay";
+import { PostHogProvider } from "@/components/posthog-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,6 +54,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ThemeProvider>
+          <PostHogProvider />
           <GridOverlay />
           <Nav />
           {children}

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { supabase } from "@/lib/supabase";
+import posthog from "posthog-js";
 
 function useScrollY() {
   const [scrollY, setScrollY] = useState(0);
@@ -76,14 +77,19 @@ function NewsletterForm() {
       .from("newsletter_subscribers")
       .insert({ email: email.toLowerCase().trim() });
 
+    const subscribedEmail = email.toLowerCase().trim();
+
     if (error) {
       // duplicate email (unique constraint)
       if (error.code === "23505") {
+        posthog.identify(subscribedEmail, { email: subscribedEmail });
         setState("done");
       } else {
         setState("error");
       }
     } else {
+      posthog.identify(subscribedEmail, { email: subscribedEmail });
+      posthog.capture("newsletter_signup", { email: subscribedEmail });
       setState("done");
     }
   }
@@ -171,6 +177,7 @@ export default function Home() {
             <div className="flex gap-4 items-center">
               <a
                 href="#contact"
+                onClick={() => posthog.capture("cta_get_in_touch")}
                 className="font-body text-sm font-semibold text-white bg-accent px-7 py-3 hover:bg-accent-hover transition-colors"
               >
                 Get in Touch
@@ -213,6 +220,7 @@ export default function Home() {
                 href={item.href}
                 target={item.href.startsWith("/") ? undefined : "_blank"}
                 rel="noopener noreferrer"
+                onClick={() => posthog.capture("proof_bar_click", { name: item.name })}
                 className="font-mono text-[11px] sm:text-xs text-text-muted tracking-[0.03em] font-medium hover:text-text-primary transition-colors"
               >
                 {item.name}
@@ -272,6 +280,7 @@ export default function Home() {
             {/* Work */}
             <Link
               href="/work"
+              onClick={() => posthog.capture("card_click", { card: "work" })}
               className="bg-surface p-8 sm:p-10 hover:bg-surface-hover transition-colors relative overflow-hidden group"
             >
               <div
@@ -296,6 +305,7 @@ export default function Home() {
             {/* Teaching */}
             <Link
               href="/product-heroes"
+              onClick={() => posthog.capture("card_click", { card: "teaching" })}
               className="bg-surface p-8 sm:p-10 hover:bg-surface-hover transition-colors relative overflow-hidden group"
             >
               <div

@@ -1,5 +1,7 @@
 "use client";
 
+import posthog from "posthog-js";
+
 const CONTACT_ROWS = [
   { label: "Email", value: "v@vinicius.pm", href: "mailto:v@vinicius.pm", accent: true },
   { label: "LinkedIn", value: "vinicius-saraiva", href: "https://www.linkedin.com/in/vinicius-saraiva/", accent: true },
@@ -94,7 +96,7 @@ function ContactRow({
 
   if (href) {
     return (
-      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+      <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" onClick={() => posthog.capture("contact_click", { label, value })}>
         {content}
       </a>
     );
