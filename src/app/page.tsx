@@ -188,14 +188,14 @@ export default function Home() {
 
         <div
           className="absolute bottom-10 left-6 sm:left-10 flex items-center gap-2 transition-opacity duration-300"
-          style={{ opacity: scrollY > 100 ? 0 : 0.4 }}
+          style={{ opacity: scrollY > 100 ? 0 : 0.7, animation: "scroll-bounce 2s ease-in-out infinite" }}
         >
           <div
-            className="w-px h-10"
-            style={{ background: "linear-gradient(to bottom, var(--text-dim), transparent)" }}
+            className="w-px h-12"
+            style={{ background: "linear-gradient(to bottom, var(--text-muted), transparent)" }}
           />
           <span
-            className="font-mono text-[10px] text-text-dim tracking-[0.08em]"
+            className="font-mono text-[11px] text-text-muted tracking-[0.08em]"
             style={{ writingMode: "vertical-rl" }}
           >
             SCROLL

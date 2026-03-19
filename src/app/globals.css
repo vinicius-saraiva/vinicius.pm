@@ -91,6 +91,12 @@
   }
 }
 
+/* ─── SCROLL BOUNCE ─── */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 /* ─── PULSE DOT ─── */
 @keyframes pulse-dot {
   0%, 100% { box-shadow: 0 0 0 0 var(--accent-soft); }
