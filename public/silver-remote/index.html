@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silver Remote — Control your Apple TV from your Mac</title>
+<meta name="description" content="Free macOS menu bar app to control your Apple TV 2nd and 3rd generation. Auto-discovers your Apple TV, full d-pad navigation, keyboard shortcuts. Open source.">
+<meta name="keywords" content="Apple TV remote, Apple TV 3 remote, Apple TV 2 remote, macOS remote control, Apple TV menu bar, Apple TV Mac app, Apple TV lost remote, silver remote, pyatv">
+<link rel="canonical" href="https://vinicius.pm/silver-remote/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Silver Remote — Control your Apple TV from your Mac">
+<meta property="og:description" content="Free macOS menu bar app to control your Apple TV 2nd and 3rd generation. Auto-discovers your Apple TV on your network. Open source.">
+<meta property="og:url" content="https://vinicius.pm/silver-remote/">
+<meta property="og:image" content="https://vinicius.pm/silver-remote/mockup-menubar.png">
+<meta property="og:site_name" content="Silver Remote">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Silver Remote — Control your Apple TV from your Mac">
+<meta name="twitter:description" content="Free macOS menu bar app to control your Apple TV 2nd and 3rd generation. Open source.">
+<meta name="twitter:image" content="https://vinicius.pm/silver-remote/mockup-menubar.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Silver Remote",
+  "description": "macOS menu bar app to control Apple TV 2nd and 3rd generation",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "url": "https://vinicius.pm/silver-remote/",
+  "downloadUrl": "https://github.com/vinicius-saraiva/silver-remote/releases/latest/download/Silver.Remote.dmg",
+  "softwareVersion": "1.0.0",
+  "author": {
+    "@type": "Person",
+    "name": "Vinicius Andrade",
+    "url": "https://vinicius.pm"
+  }
+}
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #222;
+    --text: #e5e5e5;
+    --text-muted: #888;
+    --accent: #c0c0c4;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    font-size: 125%;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .nav-brand img {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    border: 1px solid #333;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  /* Hero */
+  .hero {
+    padding: 40px 0 60px;
+  }
+  .hero .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .hero-text {
+    flex: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c0c0c4;
+    border: 1px solid #444;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    letter-spacing: 0.3px;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, #a0a0a8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin: 0 0 36px;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #000;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .hero-cta:hover { opacity: 0.85; text-decoration: none; }
+  .hero-cta svg { width: 18px; height: 18px; }
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #444;
+    margin-left: 12px;
+    transition: border-color 0.2s;
+    text-decoration: none;
+  }
+  .hero-cta-secondary:hover { border-color: #888; text-decoration: none; }
+  .hero-secondary {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* Remote image */
+  .hero-image {
+    flex-shrink: 0;
+    width: 250px;
+  }
+  .hero-image img {
+    width: 100%;
+    filter: drop-shadow(0 20px 60px rgba(0,0,0,0.5));
+  }
+
+  /* Mockup */
+  .mockup-section {
+    padding: 60px 0;
+    text-align: center;
+  }
+  .mockup-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .mockup-section p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+  .mockup-section img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  /* Features */
+  .features {
+    padding: 60px 0;
+  }
+  .features h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .feature-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .feature-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* How it works */
+  .how {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+  }
+  .how h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .step-content h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .step-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Requirements */
+  .requirements {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+  }
+  .requirements h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .req-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .req-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .req-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1a2e1a;
+    border: 1px solid #2d4a2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #4ade80;
+    font-size: 11px;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+  }
+  .faq h2 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .faq-item:first-of-type {
+    border-top: 1px solid var(--border);
+  }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--text-muted); }
+  footer a:hover { color: var(--text); }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero { padding: 50px 0 40px; }
+    .hero .container { flex-direction: column; text-align: center; }
+    .hero-text { text-align: center; }
+    .hero p { margin: 0 auto 36px; }
+    .hero-image { width: 160px; order: -1; margin-bottom: 20px; }
+    .hero-secondary { display: block; margin: 12px 0 0; }
+    .features-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <span class="nav-brand"><img src="icon.png" alt="Silver Remote icon" />Silver Remote</span>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">Setup</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://github.com/vinicius-saraiva/silver-remote" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <span class="hero-badge">For Apple TV 2nd & 3rd generation</span>
+      <h1>The most beautiful remote, now on your Mac.</h1>
+      <p>Lost your Apple TV remote? Silver Remote lives in your menu bar and controls your Apple TV over your local network. No pairing required.</p>
+      <a href="https://github.com/vinicius-saraiva/silver-remote/releases/latest/download/Silver.Remote.dmg" class="hero-cta" id="downloadBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download for macOS
+      </a>
+      <a href="https://github.com/vinicius-saraiva/silver-remote" target="_blank" class="hero-cta-secondary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        View on GitHub
+      </a>
+      <div class="hero-secondary">Free &middot; Open source</div>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdsassets.apple.com/live/7WUAS350/images/apple-tv/apple-tv-aluminum-remote-01.png" alt="Apple TV Aluminum Remote" />
+    </div>
+  </div>
+</section>
+
+<!-- App mockup -->
+<section class="mockup-section">
+  <div class="container">
+    <h2>Right in your menu bar</h2>
+    <p>Click the icon. Control your TV. That's it.</p>
+    <img src="mockup-menubar.png" alt="Silver Remote in the macOS menu bar" />
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+  <div class="container">
+    <h2>What you get</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Menu bar app</h3>
+        <p>Lives in your macOS menu bar. Click the icon to open, click away to dismiss.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Full navigation</h3>
+        <p>D-pad, select, menu, play/pause. Everything you need to navigate your Apple TV.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Auto-discovery</h3>
+        <p>Automatically finds your Apple TV on the network. No IP address needed.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Keyboard shortcuts</h3>
+        <p>Arrow keys to navigate, Enter to select, Space to play/pause, Escape for menu.</p>
+      </div>
+      <div class="feature-card">
+        <h3>App shortcuts</h3>
+        <p>Quick-launch MUBI and Netflix directly from the remote.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Connection status</h3>
+        <p>Green dot when connected, yellow while scanning. Always know your connection state.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how" id="how">
+  <div class="container">
+    <h2>Setup</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Download and open</h3>
+          <p>Open the DMG and drag Silver Remote to your Applications folder.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Connect to the same network</h3>
+          <p>Make sure your Mac and Apple TV are on the same Wi-Fi network. Silver Remote uses your local network to communicate with your Apple TV.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Launch and control</h3>
+          <p>Click the <strong>[tv]</strong> icon in your menu bar. Silver Remote scans the network every 30 seconds to find your Apple TV. Once connected, the status dot turns green and shows the device IP.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Requirements -->
+<section class="requirements">
+  <div class="container">
+    <h2>Requirements</h2>
+    <ul class="req-list">
+      <li><span class="req-check">&#10003;</span> macOS (Apple Silicon or Intel)</li>
+      <li><span class="req-check">&#10003;</span> Apple TV 2nd or 3rd generation</li>
+      <li><span class="req-check">&#10003;</span> Mac and Apple TV on the same Wi-Fi network</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Does it work with Apple TV 4K or Apple TV HD?</h3>
+      <p class="faq-a">No. Silver Remote is built for the Apple TV 2nd and 3rd generation, which use the DMAP protocol. The 4th generation and later use a different protocol (MRP) that is not currently supported.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">How does it find my Apple TV?</h3>
+      <p class="faq-a">Silver Remote scans your local network every 30 seconds using the pyatv library. It discovers any Apple TV automatically. No manual IP configuration is needed.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">My Apple TV isn't connected to Wi-Fi yet. Can I still use this?</h3>
+      <p class="faq-a">Your Apple TV needs to be on the same network as your Mac. If it's not yet on Wi-Fi, connect it to your router with an Ethernet cable first, then use Silver Remote to navigate the Wi-Fi settings on screen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Is it free?</h3>
+      <p class="faq-a">Yes, completely free and open source. You can view the source code on <a href="https://github.com/vinicius-saraiva/silver-remote" target="_blank">GitHub</a>.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">Do I need to install Python or any dependencies?</h3>
+      <p class="faq-a">No. The DMG contains a self-contained app with everything bundled. Just drag it to Applications and run.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">How do I quit the app?</h3>
+      <p class="faq-a">Click the [tv] icon in your menu bar to open the remote, then click "Quit" at the bottom.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-q">What about Apple TV 4K or newer? Are there alternatives?</h3>
+      <p class="faq-a">Silver Remote only supports Apple TV 2nd and 3rd generation (DMAP protocol). For newer models, check out <a href="https://itsytv.app/" target="_blank">itsytv</a> (tvOS 15+, Swift), <a href="https://www.appletvremote.com/en/" target="_blank">Apple TV Remote</a> (4th gen+, Rust/Tauri), or <a href="https://github.com/bsharper/atv-desktop-remote" target="_blank">ATV Desktop Remote</a> (all generations, Electron/pyatv).</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>Silver Remote is an <a href="https://github.com/vinicius-saraiva/silver-remote" target="_blank">open source</a> project by <a href="https://vinicius.pm" target="_blank">vinicius.pm</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
