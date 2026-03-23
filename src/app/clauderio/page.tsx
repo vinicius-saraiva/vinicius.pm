@@ -284,7 +284,7 @@ export default function ClaudeRio() {
             </h2>
 
             <p className="text-sm text-text-muted leading-relaxed mb-6">
-              Abri alguns hor&aacute;rios em Abril pra quem quer aprofundar. A gente trabalha junto no seu setup com Claude Code.
+              Abri alguns hor&aacute;rios em Abril pra quem quiser aprofundar. A gente trabalha junto no seu setup com Claude Code.
             </p>
 
             <div className="flex flex-col gap-6">
