@@ -19,7 +19,7 @@ export default function TickerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="ticker-root fixed inset-0 overflow-hidden bg-gray-950">
+    <div className="ticker-root fixed inset-0 overflow-hidden bg-gray-950" style={{ touchAction: "manipulation" }}>
       {children}
     </div>
   );

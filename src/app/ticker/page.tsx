@@ -244,22 +244,7 @@ export default function TickerPage() {
   return (
     <div className="flex h-full flex-col items-center justify-center px-6 select-none">
       <div className="w-full max-w-sm">
-        <div className="mb-12 text-center">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/10">
-            <svg
-              className="h-8 w-8 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
-              />
-            </svg>
-          </div>
+        <div className="mb-8 text-center">
           <h1 className="text-2xl font-bold tracking-tight text-white">
             Slide Remote
           </h1>
@@ -293,7 +278,7 @@ export default function TickerPage() {
             <button
               onClick={() => setRoomCode(generateRoomCode())}
               title="Generate random code"
-              className="flex items-center justify-center rounded-xl border border-gray-700/50 bg-gray-900 px-3.5 text-gray-400 transition-colors hover:border-gray-600 hover:text-gray-300"
+              className="flex shrink-0 items-center justify-center rounded-xl border border-gray-700/50 bg-gray-900 px-3.5 text-gray-400 transition-colors hover:border-gray-600 hover:text-gray-300"
             >
               <svg
                 className="h-5 w-5"
