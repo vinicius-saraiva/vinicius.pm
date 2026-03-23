@@ -336,6 +336,17 @@ export default function TickerPage() {
           />
           <span className="text-xs text-gray-500">{statusLabel}</span>
         </div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="https://github.com/vinicius-saraiva/ticker-extension"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-gray-600 underline underline-offset-2 transition-colors hover:text-gray-400"
+          >
+            Get the Chrome Extension
+          </a>
+        </div>
       </div>
     </div>
   );
