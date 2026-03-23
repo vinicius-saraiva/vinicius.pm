@@ -45,26 +45,26 @@ function useInView() {
 
 const cx = "max-w-[1120px] mx-auto px-6 sm:px-10";
 
-const PAYMENT_LINK = "https://payment-link-v3.stone.com.br/pl_XbjKpq7onLwaBwvGcNI2mM1lxGP5v38R";
+const PAYMENT_LINK = "https://payment-link-v3.stone.com.br/pl_9NywRQEg245ezbDC1tn8P07ArXjbYq6o";
 
 const SESSIONS = [
   {
     number: "01",
-    title: "Setup & Discovery",
-    desc: "Mapeamos seu workflow atual, seus objetivos e pontos de dor. Voc\u00ea sai com o Claude Code configurado, seu primeiro CLAUDE.md, e um plano claro do que construir nas pr\u00f3ximas sess\u00f5es.",
-    topics: ["Setup e configura\u00e7\u00e3o do Claude Code", "Entendendo seu stack e workflow", "M\u00e3o na massa: primeiro projeto com assist\u00eancia de IA"],
+    title: "Diagn\u00f3stico",
+    desc: "Entendo seu contexto, stack e objetivos. Sa\u00edmos com o Claude Code configurado e um plano claro do que atacar.",
+    topics: ["Seu workflow e onde voc\u00ea trava hoje", "Setup completo do Claude Code", "Plano das pr\u00f3ximas sess\u00f5es"],
   },
   {
     number: "02",
     title: "Deep Dive",
-    desc: "Mergulhamos nos temas que mais importam pra voc\u00ea. APIs, Supabase, modelagem de banco, prompt engineering \u2014 o que realmente destravar o seu caso espec\u00edfico.",
-    topics: ["T\u00f3pico customizado com base nas suas necessidades", "Construindo uma feature real de ponta a ponta", "Padr\u00f5es de debugging e resolu\u00e7\u00e3o de problemas"],
+    desc: "Mergulhamos no que importa pra voc\u00ea. Pode ser APIs, banco de dados, prompt engineering. A gente constr\u00f3i junto.",
+    topics: ["T\u00f3pico escolhido por voc\u00ea", "Construindo algo real de ponta a ponta", "Debugging e resolu\u00e7\u00e3o de problemas"],
   },
   {
     number: "03",
-    title: "Avan\u00e7ado & Pr\u00f3ximos Passos",
-    desc: "Atacamos o que \u00e9 mais dif\u00edcil \u2014 integra\u00e7\u00f5es, decis\u00f5es de arquitetura, ou workflows avan\u00e7ados do Claude Code. Voc\u00ea sai com um setup completo e confian\u00e7a pra continuar construindo sozinho.",
-    topics: ["Workflows avan\u00e7ados e integra\u00e7\u00f5es", "Code review do que voc\u00ea construiu", "Roadmap para continuar evoluindo"],
+    title: "Refinamento",
+    desc: "Revisamos o que voc\u00ea construiu, resolvemos o que ficou travado e te deixo com autonomia pra continuar sozinho.",
+    topics: ["Revis\u00e3o do que foi constru\u00eddo", "Resolver o que ficou pendente", "Autonomia pra seguir evoluindo"],
   },
 ];
 
@@ -109,65 +109,23 @@ export default function Mentorship() {
 
           <div className="max-w-[720px]">
             <div className="flex items-center gap-3 mb-8">
-              <span className="text-lg">&#x1F1E7;&#x1F1F7;</span>
               <span
                 className="font-mono text-[11px] tracking-[0.08em] text-accent px-2.5 py-1"
                 style={{ background: "var(--accent-soft)" }}
               >
-                MENTORIA INDIVIDUAL
+                SESS&Otilde;ES INDIVIDUAIS
               </span>
             </div>
 
             <h1 className="font-heading text-4xl sm:text-[56px] font-black leading-[1.1] tracking-[-0.04em] mb-6">
-              Mentoria 1:1<span className="text-accent">.</span>
+              Sess&otilde;es 1:<span className="text-accent">1</span>
             </h1>
 
             <p className="text-lg text-text-muted leading-relaxed max-w-[600px] mb-6">
-              3 sess&otilde;es individuais, 100% adaptadas ao que voc&ecirc; precisa.
-              Claude Code, Supabase, APIs, desenvolvimento de produto com IA, com foco
-              no que realmente te destrava.
+              Abri algumas vagas em Abril pra quem quer aprofundar.
+              A gente trabalha junto no seu setup com Claude Code.
             </p>
 
-            <div className="mb-8">
-              <div className="flex items-baseline gap-3 mb-1">
-                <span className="font-heading text-lg text-text-dim line-through">
-                  R$1.490
-                </span>
-                <span className="font-heading text-3xl sm:text-4xl font-black text-text-primary">
-                  R$1.192
-                </span>
-                <span className="font-mono text-sm text-text-dim">
-                  / 3 sess&otilde;es
-                </span>
-              </div>
-              <span
-                className="inline-block font-mono text-[11px] tracking-[0.06em] text-accent px-2.5 py-1 mt-2"
-                style={{ background: "var(--accent-soft)" }}
-              >
-                20% OFF &mdash; CLAUDE RIO
-              </span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a
-                href={PAYMENT_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => posthog.capture("mentorship_payment_click", { source: "mentorship_page" })}
-                className="inline-block font-body text-sm font-semibold text-white bg-accent px-7 py-3 hover:bg-accent-hover transition-colors"
-              >
-                Quero me inscrever
-              </a>
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-2 h-2 rounded-full bg-accent shrink-0"
-                  style={{ animation: "pulse-dot 2s ease-in-out infinite" }}
-                />
-                <span className="font-mono text-[12px] text-accent tracking-[0.03em] font-medium">
-                  4 vagas restantes
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -269,49 +227,52 @@ export default function Mentorship() {
         </div>
       </section>
 
-      {/* ─── WHAT YOU GET ─── */}
-      <section ref={register("details")} className="py-16 border-t border-border">
+      {/* ─── PRICING ─── */}
+      <section ref={register("pricing")} className="py-16 border-t border-border">
         <div
           className={cx}
           style={{
-            opacity: is("details") ? 1 : 0,
-            transform: is("details") ? "translateY(0)" : "translateY(16px)",
+            opacity: is("pricing") ? 1 : 0,
+            transform: is("pricing") ? "translateY(0)" : "translateY(16px)",
             transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
           <div className="max-w-[640px]">
-            <h2 className="font-heading text-2xl sm:text-[28px] font-extrabold text-text-primary tracking-[-0.02em] mb-6">
-              O que est&aacute; incluso<span className="text-accent">.</span>
-            </h2>
-
-            <ul className="space-y-3 mb-10">
-              {[
-                "3 sess\u00f5es individuais (1h cada), no seu ritmo",
-                "Conte\u00fado 100% adaptado ao seu papel, stack e objetivos",
-                "M\u00e3o na massa \u2014 a gente constr\u00f3i coisas reais, n\u00e3o slides",
-                "Suporte ass\u00edncrono entre sess\u00f5es via WhatsApp",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span
-                    className="w-1.5 h-1.5 bg-accent mt-2 shrink-0"
-                    style={{ borderRadius: 1 }}
-                  />
-                  <span className="text-sm text-text-muted leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <div className="mb-6">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span className="font-heading text-lg text-text-dim line-through">
+                  R$1.490
+                </span>
+                <span className="font-heading text-3xl sm:text-4xl font-black text-text-primary">
+                  R$1.192
+                </span>
+                <span className="font-mono text-sm text-text-dim">
+                  / 3 sess&otilde;es
+                </span>
+              </div>
+              <p className="font-mono text-sm text-text-muted mt-2">
+                ou 12x de <span className="font-semibold">R$99,33</span> sem juros
+              </p>
+              <span
+                className="inline-block font-mono text-[11px] tracking-[0.06em] font-medium border px-2.5 py-1 mt-2"
+                style={{ color: "#25D366", background: "rgba(37, 211, 102, 0.08)", borderColor: "rgba(37, 211, 102, 0.25)" }}
+              >
+                20% OFF CLAUDERIO
+              </span>
+              <p className="font-mono text-[11px] text-text-dim mt-2">
+                V&aacute;lido at&eacute; ter&ccedil;a-feira, 25 de mar&ccedil;o &agrave;s 23h59
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <a
                 href={PAYMENT_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => posthog.capture("mentorship_payment_click", { source: "mentorship_bottom" })}
+                onClick={() => posthog.capture("mentorship_payment_click", { source: "mentorship_page" })}
                 className="inline-block font-body text-sm font-semibold text-white bg-accent px-7 py-3 hover:bg-accent-hover transition-colors"
               >
-                Quero me inscrever &mdash; R$1.192
+                Reservar hor&aacute;rio
               </a>
               <div className="flex items-center gap-2">
                 <span
@@ -319,7 +280,7 @@ export default function Mentorship() {
                   style={{ animation: "pulse-dot 2s ease-in-out infinite" }}
                 />
                 <span className="font-mono text-[12px] text-accent tracking-[0.03em] font-medium">
-                  4 vagas restantes
+                  4 vagas dispon&iacute;veis em Abril
                 </span>
               </div>
             </div>
@@ -349,13 +310,12 @@ export default function Mentorship() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => posthog.capture("mentorship_whatsapp_click", { source: "mentorship_page" })}
-              className="inline-flex items-center gap-3 font-body text-sm font-semibold text-white px-7 py-3 hover:opacity-90 transition-opacity"
-              style={{ background: "#25D366" }}
+              className="inline-flex items-center gap-2 font-mono text-[12px] text-text-muted px-4 py-2 border border-border hover:text-accent hover:border-accent transition-colors"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              Chamar no WhatsApp
+              WhatsApp
             </a>
           </div>
         </div>
