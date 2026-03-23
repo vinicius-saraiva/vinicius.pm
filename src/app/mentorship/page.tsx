@@ -303,7 +303,7 @@ export default function Mentorship() {
               Tem d&uacute;vidas?<span className="text-accent">.</span>
             </h2>
             <p className="text-sm text-text-muted leading-relaxed mb-6">
-              Me manda uma mensagem no WhatsApp. Sem compromisso, a gente conversa e eu te explico como funciona.
+              Me manda uma mensagem no WhatsApp.
             </p>
             <a
               href="https://wa.me/5524992679147"
