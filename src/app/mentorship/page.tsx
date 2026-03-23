@@ -122,7 +122,7 @@ export default function Mentorship() {
             </h1>
 
             <p className="text-lg text-text-muted leading-relaxed max-w-[600px] mb-6">
-              Abri algumas vagas em Abril pra quem quer aprofundar.
+              Abri alguns hor&aacute;rios em Abril pra quem quer aprofundar.
               A gente trabalha junto no seu setup com Claude Code.
             </p>
 
