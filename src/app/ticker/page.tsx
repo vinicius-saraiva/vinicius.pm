@@ -273,7 +273,7 @@ export default function TickerPage() {
                 setRoomCode(val);
               }}
               placeholder="0000"
-              className="flex-1 rounded-xl border border-gray-700/50 bg-gray-900 px-4 py-3.5 text-center font-mono text-2xl font-bold tracking-[0.3em] text-white placeholder-gray-700 outline-none transition-colors focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30"
+              className="w-48 rounded-xl border border-gray-700/50 bg-gray-900 px-4 py-3.5 text-center font-mono text-2xl font-bold tracking-[0.3em] text-white placeholder-gray-700 outline-none transition-colors focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30"
             />
             <button
               onClick={() => setRoomCode(generateRoomCode())}
