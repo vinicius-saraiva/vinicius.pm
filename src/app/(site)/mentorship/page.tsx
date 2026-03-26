@@ -260,7 +260,7 @@ export default function Mentorship() {
                 20% OFF CLAUDERIO
               </span>
               <p className="font-mono text-[11px] text-text-dim mt-2">
-                V&aacute;lido at&eacute; ter&ccedil;a-feira, 24 de mar&ccedil;o &agrave;s 23h59
+                V&aacute;lido at&eacute; domingo, 29 de mar&ccedil;o &agrave;s 23h59
               </p>
             </div>
 

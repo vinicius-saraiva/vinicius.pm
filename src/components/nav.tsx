@@ -50,6 +50,12 @@ export function Nav() {
             >
               Teaching
             </Link>
+            <Link
+              href="/clauderio"
+              className="font-body text-lg font-medium text-text-muted hover:text-text-primary transition-colors hidden sm:block"
+            >
+              Claude Rio
+            </Link>
             <a
               href="#contact"
               onClick={() => posthog.capture("contact_click", { label: "Nav", value: "Contact button" })}
