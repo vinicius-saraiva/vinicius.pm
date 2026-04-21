@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cliko — Your phone is a remote for Slides</title>
+  <meta name="description" content="Turn your phone into a remote for Google Slides. Swipe or tap to advance — no app, no Bluetooth, no pairing." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #030712;
+      --bg-surface: #0b1220;
+      --bg-elevated: #111827;
+      --bg-hover: #1f2937;
+      --primary: #3B82F6;
+      --primary-dark: #2563EB;
+      --primary-glow: rgba(59, 130, 246, 0.15);
+      --fg: #F9FAFB;
+      --fg-muted: #9CA3AF;
+      --fg-dim: #6B7280;
+      --border: #1F2937;
+      --border-light: #374151;
+      --success: #10B981;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-feature-settings: "cv11", "ss01";
+      background: var(--bg);
+      color: var(--fg);
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { cursor: pointer; }
+
+    /* ─── Layout ─── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ─── Nav ─── */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(3, 7, 18, 0.75);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 200ms;
+    }
+    nav.scrolled { border-color: var(--border); }
+    .nav-row {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.03em; }
+    .brand .mark {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-ctas { display: flex; align-items: center; gap: 12px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600; font-size: 14px; letter-spacing: 0.01em;
+      transition: transform 120ms, background 160ms, border-color 160ms;
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(59,130,246,0.28);
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--border-light);
+    }
+    .btn-outline:hover { border-color: var(--fg-dim); background: var(--bg-surface); }
+    .btn-lg { padding: 16px 28px; font-size: 16px; border-radius: 12px; }
+
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      padding: 100px 0 80px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(800px circle at 80% 20%, rgba(59,130,246,0.18), transparent 50%),
+        radial-gradient(600px circle at 10% 90%, rgba(59,130,246,0.06), transparent 50%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-surface);
+      border-radius: 999px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 24px;
+    }
+    .pill .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.18);
+    }
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+    .hero h1 .accent { color: var(--primary); }
+    .hero p.sub {
+      margin-top: 22px;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--fg-muted);
+      line-height: 1.5;
+      max-width: 540px;
+    }
+    .hero-ctas {
+      margin-top: 34px;
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .hero-proof {
+      margin-top: 28px;
+      font-size: 13px; font-weight: 500; color: var(--fg-dim);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hero-proof .tick { color: var(--success); font-weight: 700; }
+
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .hero-visual img {
+      height: 620px; width: auto;
+      filter: drop-shadow(0 40px 60px rgba(0,0,0,0.55));
+    }
+
+    /* ─── Chef shoutout (bold funny) ─── */
+    .shoutout {
+      padding: 120px 0;
+      background: linear-gradient(180deg, transparent, rgba(59,130,246,0.04), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+    .shoutout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+    .shoutout img {
+      height: 520px; width: auto;
+      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.55));
+      justify-self: center;
+    }
+    .shoutout h2 {
+      font-size: clamp(36px, 4.4vw, 56px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+    .shoutout h2 .accent { color: var(--primary); }
+    .shoutout p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--fg-muted);
+      line-height: 1.55;
+      max-width: 480px;
+    }
+    .shoutout .wink {
+      margin-top: 24px;
+      font-size: 14px; font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── How it works ─── */
+    .how {
+      padding: 120px 0;
+      position: relative;
+    }
+    .section-eyebrow {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(34px, 4.2vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+    .section-title .accent { color: var(--primary); }
+    .section-intro {
+      margin-top: 18px;
+      font-size: 18px; color: var(--fg-muted); max-width: 580px;
+      line-height: 1.55;
+    }
+
+    .how-steps {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .step {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 32px 36px;
+      text-align: center;
+      position: relative;
+      transition: transform 220ms, border-color 220ms;
+    }
+    .step:hover { border-color: var(--border-light); transform: translateY(-4px); }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--primary);
+      color: #fff; font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 6px 18px rgba(59,130,246,0.35);
+    }
+    .step-visual {
+      height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .step-visual img {
+      max-height: 280px; width: auto;
+      filter: drop-shadow(0 18px 34px rgba(0,0,0,0.45));
+    }
+    .step-visual .ext-icon {
+      width: 120px; height: 120px; border-radius: 28px;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 14px 40px rgba(59,130,246,0.3);
+    }
+    .step h3 {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.015em;
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 14px; color: var(--fg-muted); line-height: 1.55;
+    }
+
+    /* ─── Features ─── */
+    .features {
+      padding: 120px 0;
+    }
+    .features-grid {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex; gap: 20px;
+      transition: border-color 200ms, background 200ms;
+    }
+    .feature-card:hover { border-color: var(--border-light); background: var(--bg-elevated); }
+    .feature-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--primary-glow);
+      border: 1px solid rgba(59,130,246,0.35);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-card h3 {
+      font-size: 18px; font-weight: 700; letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+    .feature-card p {
+      font-size: 14px; color: var(--fg-muted); line-height: 1.55;
+    }
+
+    /* ─── Desktop proof ─── */
+    .desktop-proof {
+      padding: 100px 0 120px;
+    }
+    .desktop-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .desktop-card::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(500px circle at 100% 0%, rgba(59,130,246,0.08), transparent 50%);
+      pointer-events: none;
+    }
+    .desktop-card h2 {
+      font-size: clamp(30px, 3.6vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .desktop-card h2 .accent { color: var(--primary); }
+    .desktop-card p {
+      margin-top: 16px;
+      font-size: 16px;
+      color: var(--fg-muted);
+      line-height: 1.6;
+      max-width: 420px;
+    }
+    .desktop-card img {
+      width: 100%; max-width: 520px;
+      height: auto;
+      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.45));
+      justify-self: center;
+    }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      padding: 140px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(900px circle at 50% 50%, rgba(59,130,246,0.16), transparent 55%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+    }
+    .cta-section h2 .accent { color: var(--primary); }
+    .cta-section p {
+      margin-top: 18px;
+      font-size: 18px;
+      color: var(--fg-muted);
+      max-width: 520px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.55;
+    }
+    .cta-buttons {
+      margin-top: 44px;
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      font-size: 13px;
+      color: var(--fg-dim);
+    }
+    .footer-row {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-row .brand { font-size: 15px; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a:hover { color: var(--fg); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 880px) {
+      .hero { padding: 64px 0 48px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual img { height: 480px; }
+      .hero p.sub { max-width: none; }
+      .shoutout { padding: 80px 0; }
+      .shoutout-grid { grid-template-columns: 1fr; gap: 36px; }
+      .shoutout img { height: 380px; order: -1; }
+      .how { padding: 80px 0; }
+      .how-steps { grid-template-columns: 1fr; gap: 20px; }
+      .features { padding: 80px 0; }
+      .features-grid { grid-template-columns: 1fr; }
+      .desktop-proof { padding: 60px 0 80px; }
+      .desktop-card { grid-template-columns: 1fr; padding: 36px; gap: 28px; text-align: center; }
+      .desktop-card p { margin-left: auto; margin-right: auto; }
+      .cta-section { padding: 100px 0; }
+      .nav-ctas .btn-outline { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <div class="container nav-row">
+      <a href="#" class="brand">
+        <span class="mark">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <polyline points="5.6,4.76 14.24,10 5.6,15.24" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        cliko
+      </a>
+      <div class="nav-ctas">
+        <a class="btn btn-outline" href="https://vinicius.pm/cliko/" target="_blank" rel="noreferrer">Open on phone</a>
+        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/lolhegoknpjdbjemplaleicbhaphejig?utm_source=item-share-cb" target="_blank" rel="noreferrer">
+          Add to Chrome
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill"><span class="dot"></span>Now live on the Chrome Web Store</span>
+        <h1>
+          Your phone.<br />
+          <span class="accent">A remote for Slides.</span>
+        </h1>
+        <p class="sub">
+          cliko turns the thing that's already in your pocket into a slide clicker for Google Slides. Swipe or tap — no app, no Bluetooth, no pairing dance.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="https://chromewebstore.google.com/detail/lolhegoknpjdbjemplaleicbhaphejig?utm_source=item-share-cb" target="_blank" rel="noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+            Add to Chrome
+          </a>
+          <a class="btn btn-outline btn-lg" href="https://vinicius.pm/cliko/" target="_blank" rel="noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            Open on phone
+          </a>
+        </div>
+        <div class="hero-proof">
+          <span class="tick">✓</span>
+          Free forever. No account. No sign-in. No weird permissions.
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/iphone-17e-result.png" alt="cliko remote controller on a phone" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DESKTOP PROOF ─── -->
+  <section class="desktop-proof">
+    <div class="container">
+      <div class="desktop-card">
+        <div>
+          <div class="section-eyebrow">Where it lives</div>
+          <h2>
+            Right in your browser. <br />
+            <span class="accent">Right next to your slides.</span>
+          </h2>
+          <p>
+            cliko shows up as a tiny popup in Chrome with a QR code. Scan it with your phone and you're paired — the whole thing takes less time than finding your clicker.
+          </p>
+        </div>
+        <img src="assets/macbook-neo-result.png" alt="cliko extension running alongside Google Slides" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─── -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-eyebrow">How it works</div>
+      <h2 class="section-title">
+        Three steps. <span class="accent">No setup.</span>
+      </h2>
+      <p class="section-intro">
+        From "I should start" to "I'm presenting" takes about fifteen seconds. Pin, scan, swipe.
+      </p>
+
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-visual">
+            <div class="ext-icon">
+              <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
+                <polyline points="12,8 28,20 12,32" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Pin the extension</h3>
+          <p>Open your Google Slides and click the cliko icon in Chrome. A QR code appears.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-visual">
+            <img src="assets/iphone-17e-landing-result.png" alt="cliko Create room screen on a phone" />
+          </div>
+          <h3>Scan it with your phone</h3>
+          <p>Your phone opens vinicius.pm/cliko. Tap one button. A room is born.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-visual">
+            <img src="assets/iphone-17e-result.png" alt="cliko remote controller on a phone" />
+          </div>
+          <h3>Swipe or tap</h3>
+          <p>Swipe left for next. Right for back. Or tap either side. That's the whole thing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─── -->
+  <section class="features">
+    <div class="container">
+      <div class="section-eyebrow">Tiny thing, big energy</div>
+      <h2 class="section-title">
+        Small details that <span class="accent">actually matter.</span>
+      </h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="17 7 7 17"/><polyline points="9 7 17 7 17 15"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Gesture control</h3>
+            <p>Swipe to advance — or tap left/right. Distinct haptics for each direction so you feel the move.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="3"/>
+            </svg>
+          </div>
+          <div>
+            <h3>No app on your phone</h3>
+            <p>Works in any modern mobile browser — iPhone, Android, whatever. Zero installs on the phone side.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Instant pairing</h3>
+            <p>Scan the QR, create a room, done. No Bluetooth, no hardware, no "is it connected?" energy.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Private by default</h3>
+            <p>Your slides never leave your browser. Room codes expire the moment you disconnect.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CHEF SHOUTOUT (bold funny, haute-cuisine metaphor) ─── -->
+  <section class="shoutout">
+    <div class="container shoutout-grid">
+      <div>
+        <div class="section-eyebrow">Obsessed with the details</div>
+        <h2>
+          Every swipe, <br />
+          <span class="accent">hand-tuned.</span>
+        </h2>
+        <p>
+          Each tap, reduced to its essence. Haptics distinct for <em>next</em>, distinct for <em>back</em>. We treated the sliding experience like a dish — carefully, obsessively, from scratch.
+        </p>
+        <div class="wink">Bon appétit. 🫴</div>
+      </div>
+      <img src="assets/chef-result.png" alt="Chef holding a phone running cliko" />
+    </div>
+  </section>
+
+  <!-- ─── CTA ─── -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>
+        Ready when <span class="accent">you are.</span>
+      </h2>
+      <p>Pin the extension, scan the QR, and present like you've always had this. Because now you do.</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary btn-lg" href="https://chromewebstore.google.com/detail/lolhegoknpjdbjemplaleicbhaphejig?utm_source=item-share-cb" target="_blank" rel="noreferrer">
+          Add cliko to Chrome
+        </a>
+        <a class="btn btn-outline btn-lg" href="https://vinicius.pm/cliko/" target="_blank" rel="noreferrer">
+          Or just open it on your phone
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container footer-row">
+      <a href="#" class="brand">
+        <span class="mark">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <polyline points="5.6,4.76 14.24,10 5.6,15.24" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        cliko
+      </a>
+      <div class="footer-links">
+        <a href="https://vinicius.pm/cliko/privacy/" target="_blank" rel="noreferrer">Privacy</a>
+        <a href="https://vinicius.pm/cliko/" target="_blank" rel="noreferrer">Open remote</a>
+        <a href="https://chromewebstore.google.com/detail/lolhegoknpjdbjemplaleicbhaphejig?utm_source=item-share-cb" target="_blank" rel="noreferrer">Chrome store</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tiny nav shadow on scroll
+    const nav = document.getElementById("nav");
+    const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  </script>
+
+</body>
+</html>
