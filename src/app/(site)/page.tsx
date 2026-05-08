@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/footer";
-import { supabase } from "@/lib/supabase";
 import posthog from "posthog-js";
 
 function useScrollY() {
@@ -63,68 +62,6 @@ const PROOF_BAR = [
 ];
 
 const cx = "max-w-[1120px] mx-auto px-6 sm:px-10";
-
-function NewsletterForm() {
-  const [email, setEmail] = useState("");
-  const [state, setState] = useState<"idle" | "loading" | "done" | "error">("idle");
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    setState("loading");
-
-    const { error } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: email.toLowerCase().trim() });
-
-    const subscribedEmail = email.toLowerCase().trim();
-
-    if (error) {
-      // duplicate email (unique constraint)
-      if (error.code === "23505") {
-        posthog.identify(subscribedEmail, { email: subscribedEmail });
-        setState("done");
-      } else {
-        setState("error");
-      }
-    } else {
-      posthog.identify(subscribedEmail, { email: subscribedEmail });
-      posthog.capture("newsletter_signup", { email: subscribedEmail });
-      setState("done");
-    }
-  }
-
-  if (state === "done") {
-    return (
-      <p className="text-sm text-accent font-medium">
-        You&apos;re in. Talk soon.
-      </p>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex gap-3">
-      <input
-        type="email"
-        required
-        placeholder="your@email.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="flex-1 min-w-0 bg-surface border border-border px-4 py-2.5 text-sm text-text-primary placeholder:text-text-dim focus:outline-none focus:border-accent transition-colors"
-      />
-      <button
-        type="submit"
-        disabled={state === "loading"}
-        className="font-body text-sm font-semibold text-white bg-accent px-6 py-2.5 hover:bg-accent-hover transition-colors disabled:opacity-50"
-      >
-        {state === "loading" ? "..." : "Subscribe"}
-      </button>
-      {state === "error" && (
-        <p className="text-sm text-red-500 mt-2">Something went wrong. Try again.</p>
-      )}
-    </form>
-  );
-}
 
 export default function Home() {
   const scrollY = useScrollY();
@@ -234,35 +171,6 @@ export default function Home() {
               </span>
             )
           )}
-        </div>
-      </section>
-
-      {/* ─── NEWSLETTER ─── */}
-      <section
-        ref={register("newsletter")}
-        className="py-24"
-      >
-        <div
-          className={cx}
-          style={{
-            opacity: is("newsletter") ? 1 : 0,
-            transform: is("newsletter") ? "translateY(0)" : "translateY(16px)",
-            transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-          }}
-        >
-          <div className="max-w-[520px]">
-            <span className="font-mono text-[11px] text-accent tracking-[0.08em] mb-4 block">
-              NEWSLETTER
-            </span>
-            <h2 className="font-heading text-2xl sm:text-[28px] font-extrabold text-text-primary tracking-[-0.02em] mb-3">
-              Things I Build<span className="text-accent">.</span>
-            </h2>
-            <p className="text-sm text-text-muted leading-relaxed mb-6">
-              Occasional emails about projects, ideas, and things I&apos;m working on.
-            </p>
-
-            <NewsletterForm />
-          </div>
         </div>
       </section>
 
