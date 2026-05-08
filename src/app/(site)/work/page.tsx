@@ -77,7 +77,7 @@ const STONE = {
   period: "2025 — Present",
   role: "Product Manager",
   company: "Stone Co",
-  companyNote: "NYSE: STNE",
+  companyNote: "NASDAQ: STNE",
   location: "Rio de Janeiro",
   desc: "Building consumer banking experiences at Ton, Stone's consumer brand. Paycheck accounts, credit cards, cashback, investments, and Pix for millions of users across Brazil.",
   tags: ["Fintech", "Consumer Banking", "Cards", "Pix", "Growth"],
@@ -162,7 +162,7 @@ export default function Work() {
                 STONE CO
               </span>
               <span className="font-mono text-[11px] tracking-[0.08em] text-text-dim">
-                NYSE: STNE
+                NASDAQ: STNE
               </span>
             </div>
 

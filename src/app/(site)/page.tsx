@@ -54,7 +54,7 @@ function useInView() {
 }
 
 const PROOF_BAR = [
-  { name: "Stone Co (NYSE: STNE)", href: "https://www.stone.com.br/" },
+  { name: "Stone Co (NASDAQ: STNE)", href: "https://www.stone.com.br/" },
   { name: "iBanFirst", href: undefined },
   { name: "Product Heroes", href: "/product-heroes" },
   { name: "Bocconi University", href: undefined },
@@ -104,7 +104,7 @@ export default function Home() {
               <a href="https://www.stone.com.br/" target="_blank" rel="noopener noreferrer" className="text-text-primary hover:text-accent transition-colors">
                 Stone Co
               </a>{" "}
-              (NYSE: STNE).
+              (NASDAQ: STNE).
               <br />
               <span className="text-text-dim">
                 Consulting · Corporate Training · 1:1 Mentorship
@@ -202,7 +202,7 @@ export default function Home() {
                 Building fintech at scale<span className="text-warm">.</span>
               </h2>
               <ul className="text-sm text-text-muted leading-relaxed mb-6 space-y-1 marker:text-warm list-disc list-inside">
-                <li>Product Manager at Stone Co (NYSE: STNE).</li>
+                <li>Product Manager at Stone Co (NASDAQ: STNE).</li>
                 <li>Consumer banking experiences &mdash; paycheck accounts, credit cards, cashback, investments &mdash; for millions of users across Brazil.</li>
               </ul>
               <span className="font-mono text-[12px] text-warm tracking-[0.03em]">
